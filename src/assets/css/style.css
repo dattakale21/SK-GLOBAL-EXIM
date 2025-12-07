@@ -3154,7 +3154,7 @@ body {
         max-height: 70vh;
         overflow-y: auto;
         padding: 1rem 0;
-        margin-top:-3rem;
+        margin-top: -3rem;
         background: white;
     }
 
@@ -3172,13 +3172,25 @@ body {
 
     .nav__toggle {
         font-size: 2.5rem;
-        color:black;
+        color: black;
     }
-    .founder-img{
-        width:14rem;
-        height:15rem;
+
+    .founder-img {
+        width: 14rem;
+        height: 15rem;
     }
-    .doc-title,.ddoc-title,.docdes,.docname,.export-title{
-        color:black;
+
+    .doc-title,
+    .ddoc-title,
+    .docdes,
+    .docname,
+    .export-title {
+        color: black;
     }
+}
+
+
+.product-section,
+.contact-sectioni {
+    background-color: #fffff5;
 }
