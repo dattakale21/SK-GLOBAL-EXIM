@@ -3190,7 +3190,11 @@ body {
 }
 
 
-/* .product-section,
-.contact-sectioni {
-    background-color: #fffff5;
-} */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+* {
+  max-width: 100vw;
+}
