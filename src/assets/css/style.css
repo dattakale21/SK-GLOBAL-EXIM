@@ -1,0 +1,3184 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+
+
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --background-color: #fffff5;
+    --header-white-color: #fff;
+    --white-color: #fff;
+    --black-color: #000;
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Montserrat", sans-serif;
+    --normal-font-size: 0.938rem;
+
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-semi-bold: 600;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1024px) {
+    :root {
+        --normal-font-size: 1rem;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--background-color);
+    /* prevent accidental horizontal zoom issues */
+    overflow-x: hidden;
+
+
+}
+
+ul {
+    list-style: none;
+    /* Color highlighting when pressed on mobile devices */
+    /*-webkit-tap-highlight-color: transparent;*/
+}
+
+a {
+    text-decoration: none;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+}
+
+/*=============== HEADER ===============*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--header-white-color);
+    box-shadow: 0 2px 16px hsla(220, 32%, 8%, 0.3);
+    z-index: var(--z-fixed);
+}
+
+
+
+/* HERO SECTION HAS STARTED */
+.hero-section {
+    background-color: #fffff5;
+    margin-top: 40px;
+    padding-top: 3rem;
+}
+
+.bg-hero-image {
+    display: flex;
+    flex-direction: column;
+    width: 50rem;
+    /* max-width: 600px; */
+    margin: 1rem auto;
+    padding-top: 45px;
+    /* padding: 1.5rem 1rem; */
+}
+
+.welcome-para {
+    line-height: 1.9;
+    max-width: 800px;
+    margin: 0 auto;
+    flex: 1 1 55%;
+    /* grow, shrink, base 55% */
+    min-width: 360px;
+}
+
+.welcome-para a {
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    display: inline-block;
+    margin: 1rem 0;
+    border-radius: 5px;
+    color: #454545;
+    font-weight: bolder;
+    letter-spacing: 3px;
+}
+
+.welcome-para a:hover,
+.welcome-para a:focus {
+    background-color: #5a5a5a;
+    color: var(--white-color);
+}
+
+.bg-map {
+    background-image: url(../images/layer.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    width: 140%;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-top: -1rem;
+}
+
+/* Parent container: side-by-side on desktop, stacked on mobile */
+.bg-hero-image {
+    display: flex;
+    flex-direction: row;
+    /* side-by-side on larger screens */
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    width: 150%;
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+    /* optional horizontal padding */
+}
+
+
+/* Right image area */
+.img-box {
+    flex: 1 1 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 180px;
+    margin-right: -20rem;
+}
+
+/* Make images responsive */
+.img-box img {
+    max-width: 270%;
+    height: auto;
+    display: block;
+    margin-right: -40rem;
+    margin-top: -4rem;
+}
+
+/* Typography tweaks (optional) */
+.bg-map h1 {
+    margin: 0 0 1rem;
+    line-height: 1.05;
+    font-size: clamp(1.6rem, 3.8vw, 2.8rem);
+    /* responsive font-size */
+}
+
+/* Icon size */
+.btn i {
+    font-size: 1.2rem;
+}
+
+/* === Download buttons: keep side-by-side and animated === */
+.download-buttons {
+    margin-top: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    /* side-by-side */
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    /* IMPORTANT: don't wrap */
+    overflow: visible;
+}
+
+/* Ensure buttons do not shrink to force wrap */
+.download-buttons .btn {
+    flex: 0 0 auto;
+    /* do not grow, do not shrink */
+    white-space: nowrap;
+    /* keep text on one line */
+    min-width: 160px;
+    /* minimum button width (adjust if needed) */
+}
+
+/* Animated gradient look (copy/paste from previous) */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.7rem 1.4rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    font-weight: bolder;
+}
+
+/* Primary gradient */
+.gradient-btn,
+.btn-download {
+    background: linear-gradient(135deg, #d4a017, #f7d87c, #b8890b);
+    background-size: 250% 250%;
+    color: #111;
+    /* border: none; */
+    animation: shine 8s linear infinite;
+    box-shadow: 0 4px 12px rgba(212, 160, 23, 0.35);
+    font-weight: bolder;
+}
+
+/* Outline variant (secondary) */
+.gradient-btn.outline,
+.btn-download.outline {
+    background: transparent;
+    /* border: 2px solid #d4a017; */
+    color: #d4a017;
+    box-shadow: none;
+    /* border:2px solid; */
+
+}
+
+/* Gradient animation */
+@keyframes shine {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Hover states */
+.gradient-btn:hover,
+.btn-download:hover {
+    transform: translateY(-4px) scale(1.0001);
+    box-shadow: 0 8px 26px rgba(212, 160, 23, 0.45);
+}
+
+/* Outline hover: reveal gradient */
+.gradient-btn.outline:hover,
+.btn-download.outline:hover {
+    background: linear-gradient(135deg, #d4a017, #f7d87c, #b8890b);
+    color: #111;
+    box-shadow: 0 8px 26px rgba(212, 160, 23, 0.45);
+}
+
+/* Icon sizing */
+.btn i {
+    font-size: 1.15rem;
+}
+
+/* Force footer to stack vertically */
+.footer-container {
+    display: flex;
+    flex-direction: column !important;
+    /* FORCE vertical */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    gap: 1.2rem;
+    width: 100vw;
+    /* space between items */
+}
+
+/* Logo */
+.footer-logo img {
+    width: 110px;
+    height: auto;
+}
+
+/* Social icons row */
+.footer-social {
+    display: flex;
+    gap: 2.9rem;
+    justify-content: center;
+}
+
+.social-icon {
+    font-size: 2.6rem;
+    text-decoration: none;
+    transition: transform 0.25s ease;
+    margin-bottom: -2rem;
+}
+
+/* Keep real platform colors */
+.whatsapp i {
+    color: #25D366;
+}
+
+.email i {
+    color: #FF3B30;
+}
+
+.instagram i {
+    background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f, #285aeb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Hover animation */
+.social-icon:hover {
+    transform: translateY(-4px) scale(1.12);
+}
+
+/* Copyright text */
+.footer-links small {
+    color: #272020;
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    word-spacing: 0.5rem;
+    font-weight: bolder;
+}
+
+.footer-hr {
+    width: 90%;
+    border: none;
+    border-top: 1px solid #444;
+    /* subtle clean line */
+    margin: 1.5rem auto;
+    /* center + spacing */
+}
+
+/* === Responsive: only stack on very small screens === */
+@media (max-width: 480px) {
+    .download-buttons {
+        flex-direction: column;
+        /* stack when too narrow */
+        align-items: flex-start;
+        /* keep left aligned */
+        gap: 0.75rem;
+    }
+
+    .download-buttons .btn {
+        min-width: 0;
+        width: 100%;
+        max-width: 380px;
+        justify-content: center;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .download-buttons {
+        flex-direction: row;
+    }
+
+}
+
+/* MOBILE: stack vertically under 768px */
+@media (max-width: 768px) {
+    .bg-hero-image {
+        flex-direction: column;
+        /* stack */
+        text-align: center;
+        /* center text for mobile */
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .welcome-para,
+    .img-box {
+        width: 100%;
+        flex: none;
+    }
+
+    .welcome-para {
+        order: 1;
+    }
+
+    /* text first */
+    .img-box {
+        order: 2;
+    }
+
+    /* image below text */
+
+    /* reduce heading size on small screens if needed */
+    .bg-map h1 {
+        font-size: clamp(1.4rem, 5.5vw, 1.9rem);
+    }
+}
+
+
+/* MAIN ABOUT LAYOUT */
+/* MAIN WRAPPER */
+.about-section {
+    width: 100vw !important;
+    /* background-color: #f8f4ed !important; */
+    padding: 4rem 0 !important;
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.about-section {
+    display: flex;
+    justify-content: center;
+}
+
+/* CENTER CONTAINER */
+.about-container {
+    width: 80vw !important;
+    /* max-width: 1100px !important; FULL WIDTH */
+    margin: 0 0 !important;
+    text-align: center !important;
+    margin-top: 5rem;
+    line-height: 1.5;
+    /* padding: 0 1rem; */
+}
+
+.about-container p {
+    line-height: 1, 5;
+
+}
+
+/* TITLES */
+.about-title {
+    margin-top: 10rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+
+.title-highlight {
+    background: linear-gradient(to right, cyan, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dash-line {
+    width: 70%;
+    max-width: 28rem;
+    margin: 1.5rem auto;
+}
+
+/* TEXT */
+
+
+.intro-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: #06b6d4;
+    font-weight: bold;
+}
+
+.black-bold {
+    font-weight: bold;
+    color: #000;
+}
+
+
+
+/* TEAM TITLE */
+.team-title {
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+/* FOUNDERS GRID */
+.founders-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 2rem auto;
+}
+
+@media (min-width: 640px) {
+    .founders-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* CARDS */
+.founder-card {
+    background: white;
+    padding: 1.4rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+    text-align: center;
+    /* Ensures everything is centered */
+}
+
+.founder-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+.founder-img {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #06b6d4;
+    display: block;
+    /* Needed for centering */
+    margin: 0 auto 0.8rem;
+    /* Centers the image */
+}
+
+.founder-name {
+    font-size: 2.5rem;
+}
+
+.founder-role {
+    font-size: 1.5rem;
+}
+
+
+/* ===== STORY Section ===== */
+.story-section {
+    margin-top: 3rem;
+    line-height: 1.7;
+}
+
+.quote {
+    font-size: 1.2rem;
+    color: #0891b2;
+    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+/* ===== DECORATIVE LINES ===== */
+.decor-line {
+    width: 60rem;
+    max-width: 95%;
+    height: 20px;
+    margin: 4rem auto;
+}
+
+/* ===== CONNECT SECTION ===== */
+.connect-section {
+    margin-top: 2rem;
+}
+
+.connect-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.connect-box {
+    margin-top: 1rem;
+}
+
+.connect-label {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.connect-info {
+    color: #555;
+    font-size: 1.4rem;
+    margin-top: 0.3rem;
+}
+
+/* strong override for testing */
+/* Make all italic paragraphs actually appear italic */
+.about-section p.italic,
+.about-section .italic-para,
+.about-section .fpara1,
+.about-section .story-italic,
+.about-section .founder-desc {
+
+    font-style: italic !important;
+    color: #222;
+    font-weight: 500;
+}
+
+.about-section {
+    width: 80vw;
+}
+
+
+/* CONTACT INPUT FIELD STYLING */
+
+/* Focus Style */
+.input-field:focus {
+    outline: none;
+    border-color: #06b6d4;
+    /* cyan-500 */
+    box-shadow: 0px 0px 8px rgba(6, 182, 212, 0.35);
+}
+
+/* Textarea overrides */
+textarea.input-field {
+    resize: none;
+}
+
+/* HERO SECTION HAS ENDED */
+
+/* OUR PRODUCT SECTION STARTED */
+
+/* ===============================
+   CONTACT PAGE MAIN LAYOUT
+================================*/
+.contact {
+    background-color: #fffff5;
+    padding: 4rem 0;
+    width: 100%;
+}
+
+.contact-section {
+    background-color: #fffff5;
+    width: 100vw;
+    margin: 0 auto;
+    padding: 0 1rem;
+    margin-top: 5rem;
+}
+
+.mandit {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+/* ===============================
+   HEADINGS
+================================*/
+.contact-title {
+    font-family: serif;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-top: -2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.contact-title .highlight {
+    background: linear-gradient(to right, #06b6d4, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact-line {
+    width: 80%;
+    max-width: 29rem;
+    margin: 1.5rem auto;
+    display: block;
+}
+
+
+/* ===============================
+   INTRO PARAGRAPHS
+================================*/
+.contact-intro p {
+    max-width: 700px;
+    margin: 1rem auto;
+    line-height: 1.7;
+    color: #444;
+    font-size: 1.15rem;
+}
+
+.contact-intro .italic {
+    font-style: italic;
+    color: #111;
+}
+
+.contact-intro .bold {
+    font-weight: 600;
+}
+
+
+/* ===============================
+   NAME BLOCK
+================================*/
+.name-block {
+    text-align: center;
+    margin: 4rem auto;
+}
+
+.name-block h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: serif;
+    color: #222;
+}
+
+.name-block p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 0.3rem;
+    font-style: italic;
+}
+
+
+/* ===============================
+   FORM STYLING
+================================*/
+.contact-form {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.input-row {
+    display: flex;
+    width: 50vw;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin: 0.2rem 2rem;
+}
+
+.input-field {
+    flex: 1;
+    width: 40vw;
+    padding: 0.65rem;
+    border-radius: 10px;
+    background: white;
+    font-size: 0.95rem;
+    color: #444;
+    transition: 0.2s ease-in-out;
+
+}
+
+
+
+.input-field::placeholder {
+    color: #888;
+}
+
+.input-field:focus {
+    border-color: #bbc406;
+    box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.15);
+    outline: none;
+}
+
+textarea.input-field {
+    resize: none;
+    height: 17rem;
+}
+
+
+/* Submit Button */
+.submit-btn {
+    background: linear-gradient(135deg, #d4a017, #f7d87c, #b8890b);
+    color: white;
+    padding: 0.65rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: 0.3s ease-in-out;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.4);
+    cursor: pointer;
+    border: none;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #b8890b, #f7d87c, #d4a017);
+    transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* ===============================
+   GALLERY GRID
+================================*/
+.contact-gallery {
+    max-width: 1000px;
+    margin: 3rem auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    padding: 2rem 4rem;
+}
+
+.contact-gallery img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+
+}
+
+@media (min-width: 768px) {
+    .contact-gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+/* ===============================
+   BOTTOM CONTACT INFO
+================================*/
+.bottom-contact {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.bottom-contact p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 0.4rem;
+}
+
+
+
+
+
+/* Contact Us */
+.contact-us-title {
+    text-align: center;
+    width: 500px;
+    padding-top: 18px;
+    padding-bottom: 10px;
+    margin: 1rem auto;
+    border-top: 4px solid #ae764e;
+}
+
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="submit"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 0.4rem;
+    margin: 0.5rem;
+    /* outline: none; */
+    border: 1px solid #0db6f4;
+    border-radius: 2px;
+}
+
+.footer-image img {
+    width: 60px;
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 945px) {
+    .nav__menu {
+        position: absolute;
+        left: 0;
+        top: 2.5rem;
+        width: 100%;
+        height: calc(100vh - 3.5rem);
+        overflow: auto;
+        pointer-events: none;
+        opacity: 0;
+        transition: top 0.4s, opacity 0.3s;
+    }
+
+    .nav__menu::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .nav__list {
+        background-color: var(--white-color);
+        padding-top: 1rem;
+    }
+}
+
+.nav__link {
+    color: var(--black-color);
+    background-color: var(--white-color);
+    font-weight: var(--font-semi-bold);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.nav__link:hover {
+    background-color: var(--white-color);
+}
+
+/* Show menu */
+.show-menu {
+    opacity: 1;
+    top: 3.5rem;
+    pointer-events: initial;
+}
+
+/* Show icon */
+.show-icon .nav__burger {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+.show-icon .nav__close {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+/*=============== DROPDOWN ===============*/
+.dropdown__item {
+    cursor: pointer;
+    margin-right: 3rem;
+}
+
+.dropdown__arrow {
+    font-size: 1.25rem;
+    font-weight: initial;
+    transition: transform 0.4s;
+}
+
+.dropdown__link {
+    padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+    color: var(--black-color);
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    font-weight: var(--font-semi-bold);
+    transition: background-color 0.3s;
+    border: 1px solid #7E6F1F;
+    border-width: 80%;
+    border-radius: 1px;
+}
+
+.dropdown__link:hover {
+    background-color: var(--white-color);
+    color: #454545;
+    /* border: 1px solid red; */
+}
+
+.dropdown__menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+
+}
+
+/* Show dropdown menu & submenu */
+.dropdown__item:hover .dropdown__menu {
+    max-height: 1000px;
+    transition: max-height 0.4s ease-in;
+}
+
+/* Rotate dropdown icon */
+.dropdown__item:hover .dropdown__arrow {
+    transform: rotate(180deg);
+}
+
+/*=============== DROPDOWN SUBMENU ===============*/
+.dropdown__add {
+    margin-left: auto;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 340px) {
+    .container {
+        margin-inline: 1rem;
+    }
+
+
+}
+
+/* For large devices */
+@media screen and (min-width: 945px) {
+    .container {
+        margin-inline: auto;
+    }
+
+
+    /* Hero Section */
+    .bg-hero-image {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 85%;
+        /* max-width: 500px; */
+    }
+
+    .img-box {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .img-box img {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+
+
+    .qoute-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .quote {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+
+    .img-card img {
+        width: 150px;
+    }
+
+    .img-card-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+    }
+
+
+    .contact-us {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        background-color: #ffecdb;
+    }
+
+    .box {
+        line-height: 2;
+    }
+}
+
+
+.doc-card {
+    transition: all 0.3s ease;
+    height: 70vh;
+}
+
+.docbg {
+    height: 80vh;
+    width: 100%;
+    background-repeat: repeat;
+
+}
+
+
+.document-section {
+    margin-top: 2rem;
+    background-color: #fffff5;
+    background-repeat: repeat;
+
+}
+
+.doctitle {
+    background: linear-gradient(to right, cyan, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+
+}
+
+.docname {
+    font-size: 1.9rem;
+    font-weight: bold;
+}
+
+.docdes {
+    font-size: 1.5rem;
+    margin-top: -1rem;
+}
+
+.doc-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+
+.document-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center horizontally */
+    justify-content: center;
+    width: 100vw;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100vw;
+
+}
+
+.doc-download-btn {
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, #d4a017, #f7d87c, #b8890b);
+    font-size: 1rem;
+    color: black;
+}
+
+.doc-download-btn:hover {
+    background: linear-gradient(135deg, #b8890b, #d4a017, #f7d87c);
+    border-color: white;
+    color: black;
+    transform: scale(1.05);
+}
+
+.docpara {
+    width: 80vw;
+}
+
+.busdoctitle {
+    font-size: 5rem;
+
+}
+
+/* ------------------------------
+   PRODUCT GRID WRAPPER
+--------------------------------*/
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+    /* spacing between images */
+    padding: 1rem 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ------------------------------
+   PRODUCT IMAGE STYLE
+--------------------------------*/
+
+.product-section {
+    margin-top: 4rem;
+    background-color: #fffff5;
+}
+
+.producttitle {
+    display: flex;
+    font-size: 3rem;
+    justify-content: center;
+
+}
+
+.prot {
+    font-size: 2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    padding: 1rem 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.product-grid img {
+    width: 100%;
+    height: 180px;
+    /* ↓ Reduced height */
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+
+    transform: translateY(0);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.product-grid img:nth-child(3n+1) {
+    transform: translateY(8px);
+}
+
+.product-grid img:nth-child(3n+2) {
+    transform: translateY(-6px);
+}
+
+.product-grid img:nth-child(3n) {
+    transform: translateY(3px);
+}
+
+.product-grid img:hover {
+    transform: scale(1.001);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ------------------------------d
+   RESPONSIVE
+--------------------------------*/
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .product-grid img {
+        height: 300px;
+    }
+}
+
+.footer-links small {
+    white-space: nowrap;
+    /* Prevent text from breaking into two lines */
+    font-size: 1.5rem;
+    /* Slightly smaller for mobile */
+    display: block;
+    text-align: center;
+    overflow-x: auto;
+    /* Avoids text being cut off */
+}
+
+/* Entire paragraph italic */
+#about-para.about-text {
+    font-style: italic;
+    font-size: 1.15rem;
+    line-height: 1.75rem;
+    color: #222;
+    /* professional dark grey */
+    font-weight: 500;
+    /* smooth elegant weight */
+    margin-top: 1rem;
+}
+
+/* Cyan brand text */
+.company-name {
+    color: #086676;
+    /* cyan */
+    font-weight: 800;
+    /* bold */
+    font-style: italic !important;
+    /* override parent italic */
+}
+
+/* Bold highlighted text */
+.bold-text {
+    font-weight: 700;
+    font-style: normal !important;
+    /* stay non-italic */
+    color: #000;
+}
+
+/* Make paragraph look premium */
+#about-para.about-text {
+    letter-spacing: 0.3px;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.faq-section {
+    background-color: #fffff5;
+
+}
+
+.faq-section h3,
+.faq-section p {
+    font-size: 1.3rem;
+}
+
+.faq-q {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 0.4rem;
+}
+
+.faq-a {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.founder-role {
+    color: rgb(8, 126, 236);
+    -webkit-text-stroke: 2px rgb(1, 135, 219);
+}
+
+#faqans {
+    -webkit-text-stroke: 1px rgb(1, 6, 9);
+}
+
+.about-section p {
+    max-width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+.about-section.intro-text {
+    font-style: italic;
+}
+
+.about-section {
+    background-color: #fffff5;
+
+}
+
+
+
+
+
+
+
+
+/* --------------------------------------- new -------------------- */
+
+
+/* =========================================
+   HOME PAGE — FULL RESPONSIVE FIX
+========================================= */
+
+/* ------------- HERO MAIN WRAPPER ------------ */
+
+.hero-section {
+    background-color: #fffff5;
+    margin-top: 5rem;
+    /* avoid navbar overlap */
+    padding-top: 2rem;
+    width: 100vw;
+}
+
+.bg-hero-image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* ------------- LEFT TEXT AREA ------------ */
+.welcome-para {
+    flex: 1;
+    max-width: 600px;
+}
+
+/* MAP BACKGROUND BOX */
+.bg-map {
+    background-image: url("../images/layer.png");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    max-width: 550px;
+    height: 230px;
+
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-map h1 {
+    font-size: clamp(1.6rem, 2.8vw, 2.5rem);
+    line-height: 1.2;
+}
+
+/* MAIN PARAGRAPH STYLING */
+#about-para.about-text {
+    margin-top: 1rem;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.7rem;
+    color: #222;
+    max-width: 650px;
+}
+
+/* BRAND NAME BLUE */
+.company-name {
+    color: #0891b2;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* BLACK BOLD TEXT */
+.bold-text {
+    font-weight: 700;
+    color: #000;
+}
+
+/* ------------- DOWNLOAD BUTTONS ------------ */
+.download-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.download-buttons .btn {
+    flex: none;
+    white-space: nowrap;
+}
+
+/* ------------- RIGHT IMAGE AREA ------------ */
+.img-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.img-box img {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 900px) {
+
+    .bg-hero-image {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .img-box img {
+        max-width: 350px;
+    }
+
+    #about-para.about-text {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+
+    .download-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .bg-map {
+        height: 180px;
+        background-size: contain;
+    }
+
+    .bg-map h1 {
+        font-size: 1.4rem;
+    }
+
+    .img-box img {
+        max-width: 280px;
+    }
+
+    .download-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 330px;
+        justify-content: center;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE FOOTER FIX
+========================================= */
+
+footer,
+.footer-container {
+    width: 100%;
+    background-color: #fffff5;
+    padding: 2rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Divider Line */
+.footer-hr {
+    width: 90%;
+    max-width: 600px;
+    border: none;
+    border-top: 1px solid #777;
+    margin-bottom: 1.5rem;
+}
+
+/* SOCIAL ICONS */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-icon i {
+    font-size: 2.5rem;
+    transition: transform 0.25s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-4px) scale(1.12);
+}
+
+/* ICON COLORS */
+.whatsapp i {
+    color: #25D366;
+}
+
+.email i {
+    color: #ff3b30;
+}
+
+.instagram i {
+    background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f, #285aeb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fa-phone-alt {
+    color: #0d6efd;
+}
+
+/* COPYRIGHT TEXT */
+.footer-links small {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    /* prevents breaking into 2 lines */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* prevents overflow cut */
+    width: 100%;
+}
+
+/* -------------------------------------------------
+   RESPONSIVE BEHAVIOR
+--------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .footer-social {
+        gap: 2rem;
+    }
+
+    .footer-links small {
+        font-size: 0.95rem;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-social {
+        gap: 1.6rem;
+    }
+
+    .social-icon i {
+        font-size: 2.2rem;
+    }
+
+    .footer-links small {
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+}
+
+/* ===============================
+   PRODUCT PAGE - FULL RESPONSIVE
+================================== */
+
+.product-section {
+    margin-top: 5rem;
+    padding-bottom: 3rem;
+    background-color: #fffff5;
+}
+
+/* MAIN TITLES */
+.producttitle {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.producttitle span {
+    background: linear-gradient(to right, cyan, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.decor-line {
+    width: 200px !important;
+    margin: 1rem auto 2rem;
+}
+
+.prot {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* ------------------------------
+   PRODUCT GRID (CLEAN RESPONSIVE)
+---------------------------------- */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ALL IMAGES SAME SIZE */
+.product-grid img {
+    width: 100%;
+    height: 230px;
+    /* perfect height */
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+/* Hover Animation */
+.product-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* ------------------------------
+   RANDOM OFFSET (Aesthetic Stagger)
+---------------------------------- */
+.product-grid img:nth-child(3n+1) {
+    transform: translateY(5px);
+}
+
+.product-grid img:nth-child(3n+2) {
+    transform: translateY(-7px);
+}
+
+.product-grid img:nth-child(3n) {
+    transform: translateY(3px);
+}
+
+/* ------------------------------
+   RESPONSIVE BREAKPOINTS
+---------------------------------- */
+
+/* Tablets */
+/* Default desktop layout */
+.form-two-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 100%;
+    margin-left: -0.9rem;
+}
+
+.message {
+    width: 100%;
+    height: 140vh;
+    margin-top: 1.5rem;
+}
+
+/* --- Responsive Mobile Layout --- */
+@media (max-width: 1030px) {
+
+    .form-two-row {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 48%);
+        /* keeps 2×2 at smaller screens */
+        justify-content: center;
+        /* gap: 1rem; */
+    }
+
+    /* Increase width only for last rows */
+    .message,
+    .submit-btn {
+        width: 100%;
+        max-width: 480px;
+        margin: 1.5rem auto 0 auto;
+        display: block;
+    }
+
+    .input-field {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+
+    .product-grid img {
+        height: 250px;
+    }
+
+    .nav__menu {
+        display: visible;
+    }
+
+    .form-two-row {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 48%);
+        /* keeps 2×2 at smaller screens */
+        justify-content: center;
+        /* gap: 1rem; */
+    }
+
+    /* Increase width only for last rows */
+    .message,
+    .submit-btn {
+        width: 100%;
+        max-width: 480px;
+        margin: 1.5rem auto 0 auto;
+        display: block;
+    }
+
+    .input-field {
+        width: 100%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: repeat(1, 1fr);
+        width: 95%;
+    }
+
+    .product-grid img {
+        height: 320px;
+        /* bigger, clean look */
+    }
+
+    /* Center grid items */
+    .product-grid img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+
+/* ========================================================
+   DOCUMENTATION PAGE — RESPONSIVE PDF GRID (2x2 desktop)
+========================================================== */
+
+/* Default: Mobile — 1 per row */
+.pdf-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Tablet & Desktop: 2 per row (2×2 grid) */
+@media (min-width: 1024px) {
+    .pdf-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        max-width: 1300px !important;
+    }
+
+    .docbg {
+        height: 300px !important;
+    }
+}
+
+/* Keep cards centered */
+.document-section {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+/* Fix image box */
+.docbg {
+    height: 90vh !important;
+    background-size: cover;
+    background-position: center;
+}
+
+/* ============================
+   FOUNDERS GRID RESPONSIVE FIX
+============================ */
+
+/* Default: Mobile → 1 per row */
+.about-section {
+    margin-top: -7rem;
+}
+
+.founders-grid {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    /* force 1 column on mobile */
+    gap: 2rem;
+    width: 100%;
+    margin: 2rem auto;
+    justify-items: center;
+    /* center cards */
+}
+
+.founders-card {
+    /* width:100%; */
+    width: 80rem;
+}
+
+/* ======================= NAVBAR BASE ======================= */
+
+.nav {
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.nav__logo img {
+    width: 160px;
+}
+
+/* Default: navbar links visible */
+.nav__menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav__list {
+    display: flex;
+    /* gap: 2rem; */
+}
+
+.nav__link {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000;
+}
+
+/* Hamburger hidden by default */
+.nav__toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* Active link highlight */
+.active-link {
+    color: #d4a017;
+    border-bottom: 2px solid #d4a017;
+}
+
+/* Tablet (≥640px): 2 per row */
+@media (min-width: 1200px) {
+    .founders-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        justify-items: center;
+        /* centers each card */
+    }
+
+    /* Correct Class Name for Cards */
+    .founder-card {
+        width: 100%;
+        max-width: 729px;
+    }
+
+    .about-section {
+        width: 100%;
+    }
+}
+
+/* Desktop (≥1024px): 2 per row or 4 per row — your choice */
+
+@media (min-width: 1024px) {
+    .founders-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        /* keep 2 × 2 layout */
+    }
+
+    .founder-card {
+        width: 100%;
+        max-width: 729px;
+    }
+
+    .about-section {
+        width: 100%;
+    }
+}
+
+.hero-section {
+    width: 100vw;
+    ;
+    min-height: 100vh;
+    /* full viewport height */
+    display: flex;
+    align-items: center;
+    /* center content vertically on desktop */
+    background-color: #fffff5;
+    /* optional, match your theme */
+}
+
+/* Inner flex container */
+.hero-inner {
+    width: 100%;
+    max-width: 1200px;
+    /* center content nicely */
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* Half–half on desktop */
+.welcome-para,
+.img-box {
+    flex: 1;
+}
+
+/* Image handling */
+.img-box {
+    display: flex;
+    justify-content: center;
+}
+
+.img-box img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+@media (max-width: 1030px) {
+    .founders-grid {
+        /* margin-bottom: 4rem; */
+        /* height: 100%; */
+        gap: 5rem;
+
+    }
+
+    .founder-card {
+        width: 100%;
+        height: 104%;
+        border: 3px solid rgb(237, 196, 13);
+        /* gap */
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* vertical center */
+        align-items: center;
+        /* horizontal center */
+        text-align: center;
+        font-size: 90%;
+        color: black;
+    }
+
+    .founder-img {
+        width: 70%;
+        height: 40%;
+
+    }
+
+    .team-title,
+    .story-para,
+    .connect-section {
+        color: black;
+    }
+
+    .connect-section {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+        justify-content: center;
+    }
+
+    .connect-info {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .connect-box {
+        margin: 10px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-section {
+        width: 100%;
+    }
+
+    .founder-name {
+        font-size: 250%;
+    }
+
+    .founder-desc {
+        font-style: italic !important;
+    }
+
+    .aboutdash {
+        margin-top: 6rem;
+    }
+
+    .about-section .para {
+        font-style: italic;
+    }
+
+    .intro-text {
+        width: 100%;
+        max-width: 1000px;
+        /* adjust value: 900–1200 works well */
+        margin: auto;
+    }
+
+    .product-section {
+        margin-top: -1rem;
+    }
+
+    .productgrid {
+
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* vertical center */
+        align-items: center;
+        /* horizontal center */
+        text-align: center;
+        gap: 2rem;
+
+    }
+
+    .productgrid img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 2px solid #d4a017;
+        transition: .25s ease;
+
+    }
+
+    .packinggrid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        font-size: 130%;
+        color: black;
+    }
+
+    .packinggrid img {
+        border: 3px solid rgb(237, 196, 13);
+        width: 70%;
+        height: 100%;
+        /* margin-left: 1rem; */
+        /* margin-left: -0.1rem; */
+    }
+
+    .pp {
+        width: 100%;
+
+    }
+
+    .producttitle {
+        color: black;
+        font-size: 390%;
+        margin: 4rem 5rem;
+    }
+
+    .document-section {
+        width: 100vw;
+    }
+
+    .product-section footer {
+        font-size: 3rem;
+        /* change to whatever size you want */
+    }
+
+    .producttitle {
+        font-size: 1.7rem !important;
+        margin: 1rem 0rem;
+    }
+
+    .protitle {
+        margin-top: 4rem;
+    }
+
+    .pack {
+        font-size: 1.7rem !important;
+    }
+
+    .tracking-tight {
+        font-size: 40%;
+    }
+
+    .track {
+        font-size: 100%;
+        margin-top: 1rem
+    }
+
+    .ddline {
+        height: 3rem;
+    }
+
+    .productline {
+        text-align: center;
+        width: 50%;
+    }
+
+    .decor-line {
+        width: 300px !important;
+        /* margin-bottom: 3rem; */
+
+    }
+
+    .docgrid {
+        grid-template-columns: 1fr;
+        width: 100%;
+        /* height:160%; */
+        gap: 5rem;
+        height: 520%;
+    }
+
+    /* .docicons {
+        height: 4rem;
+        width: 4rem;
+    } */
+
+    /* .docic {
+        margin: 2rem 2rem;
+        gap: 1rem;
+    } */
+
+    .icontitle {
+        font-size: 1rem;
+        margin-top: 1rem;
+        line-height: 1.4;
+    }
+
+    .docbg {
+        width: 100%;
+        max-width: 300px;
+        height: 280px;
+        /* Adjust height */
+        border-radius: 12px;
+        object-fit: cover;
+        margin: auto;
+        display: block;
+        border: 2px solid #d4a017;
+        box-shadow: 0 5px 14px rgba(0, 0, 0, 0.12);
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+
+    .doct {
+        margin-top: 2rem;
+        font-size: 100%;
+    }
+
+    .docinfo {
+        font-size: 90%;
+        margin-top: 1rem;
+
+    }
+
+    .doc-download-btn {
+        width: 20rem;
+        font-size: 2rem;
+        margin: 3rem 3rem
+    }
+
+    .faq-section {
+        margin-top: -4rem;
+    }
+
+    .faq-section p {
+        font-size: 100%;
+        line-height: 1.3;
+    }
+
+    .faq-q {
+        font-size: 130% !important;
+    }
+
+    .faq-title {
+        font-size: 160%;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+
+    }
+
+    /* .dd {
+        border: 3px solid rgb(237, 196, 13);
+
+    } */
+
+
+    .haha {
+        text-align: center;
+    }
+
+    .contact-section {
+        width: 100%;
+    }
+
+    .tracking-tight {
+        font-size: 200%;
+        line-height: 1.2;
+    }
+
+    .doctt,
+    .doctitle1 {
+        width: 100%;
+        font-size: 130%;
+
+    }
+
+    .docpara,
+    .dtree {
+        width: 100%;
+        font-size: 100%;
+        margin-top: 2rem
+    }
+
+    .doclineb {
+        margin-top: 8rem;
+        height: 3rem;
+    }
+
+    .docline {
+        height: 3rem;
+    }
+
+    .faqq {
+        font-size: 200%;
+    }
+
+    .contact-form textarea {
+        width: 100% !important;
+        /* adjust: try 110%, 120%, 130% */
+        max-width: 101%;
+        display: block;
+        margin: 0 auto;
+        /* centers it */
+    }
+
+    .form-two-row {
+        margin: auto auto;
+        width: 102%;
+        margin-left: -0.8rem;
+    }
+
+    .contact-form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+    }
+
+    .contacttitle {
+        font-size: 200%;
+        margin-bottom: -2rem;
+    }
+
+    .input-row {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .submit-btn {
+        width: 65%;
+    }
+
+    .about-section {
+        width: 100% !important;
+        margin: 0;
+        padding: 0;
+        margin-top: -7rem;
+
+    }
+
+    .intro-heading {
+        font-size: 170%;
+    }
+
+    .about-container {
+        width: 100vw !important;
+        max-width: 100% !important;
+        margin: 0;
+        padding: 0 1rem;
+        /* small padding so content doesn’t touch edges */
+    }
+
+    .bg-hero-image {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .welcome-para {
+        width: 100%;
+    }
+
+    .img-box img {
+        max-width: 95%;
+    }
+
+    .hero-section {
+        font-size: 60%;
+    }
+
+    .footer-links small {
+        display: block;
+        text-align: center;
+        white-space: normal;
+        word-wrap: break-word;
+        /* font-size: 2rem; */
+        /* Optional: make smaller on mobile */
+        padding: 10px;
+        /* Optional for spacing */
+    }
+
+    .lead {
+        font-style: italic;
+    }
+
+    .about-title {
+        color: black;
+        font-size: 200%;
+    }
+
+    .intro-text.para,
+    .fpara1 {
+        font-style: italic;
+    }
+
+    .intro-text {
+        width: 100%
+    }
+
+    .final-para,
+    .para {
+        color: black;
+        font-style: italic;
+
+    }
+
+    .hero-section {
+        margin-top: 1rem;
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tt {
+        font-size: 110%;
+    }
+
+    .bg-hero-image {
+        /* width: 100%; */
+        /* height: 100%; */
+        flex-direction: column;
+        /* Stack one below the other */
+        text-align: center;
+        display: flex;
+        width: 100vw;
+        /* Optional: centers content */
+    }
+
+    .img-box {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .img-box img {
+        max-width: 300px;
+        /* display: none; */
+    }
+
+    .welcome-para {
+        width: 100%;
+        margin-left: -0.7rem;
+    }
+
+    .hero-inner {
+        flex-direction: column;
+        /* stack content + image */
+        text-align: center;
+        width: 100vw;
+    }
+
+    .welcome-para,
+    .img-box {
+        width: 100%;
+        color: black;
+        font-weight: bolder;
+    }
+
+    .bg-map h1 {
+        font-size: 1.6rem;
+    }
+
+    .download-buttons {
+        justify-content: center;
+        /* if it's flex, center buttons */
+    }
+
+    .img-box img {
+        max-width: 720px;
+        height: 340px;
+        /* margin-left:-60rem; */
+        margin-top: 3rem;
+
+        /* keep a nice size on mobile */
+    }
+
+    .img-box {
+        margin-left: -60rem;
+
+    }
+
+    .download-buttons {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        font-weight: 900;
+
+    }
+
+    .download-buttons .btn {
+        width: 100%;
+        text-align: center;
+        font-size: 100%;
+        margin-left: 0.2rem;
+        font-weight: 900;
+    }
+
+    .btn-download i {
+        margin-left: -0.6rem;
+        font-size: 130%;
+    }
+
+    .btn-download {
+        font-size: 4rem;
+    }
+
+
+
+}
+
+
+@media (max-width: 1300px) {
+    .btn {
+        width: 50%;
+        font-size: 30%;
+    }
+
+    .ri-download-line content {
+        font-size: 40%;
+    }
+}
+
+/* -------------------- NAVBAR BASE -------------------- */
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.nav {
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .8rem;
+}
+
+/* Logo */
+.nav__logo img {
+    width: 130px;
+    cursor: pointer;
+}
+
+/* Desktop Menu */
+.nav__menu {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav__list {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.nav__link {
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+    transition: .3s ease;
+}
+
+.nav__link:hover {
+    color: #d4a017;
+}
+
+.active-link {
+    color: #d4a017;
+    border-bottom: 2px solid #d4a017;
+    padding-bottom: 3px;
+}
+
+/* Hamburger hidden default */
+.nav__toggle {
+    display: none;
+    font-size: 1.9rem;
+    cursor: pointer;
+}
+
+/* -------------------- MOBILE MENU (<= 948px) -------------------- */
+@media (max-width: 420px) {
+
+    /* Keep row layout */
+    .nav {
+        justify-content: space-between !important;
+    }
+
+    .nav__toggle {
+        display: block !important;
+        margin-right: 1rem;
+    }
+
+    .nav__menu {
+        display: none;
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        width: 100vw;
+        /* FULL WIDTH */
+        background: white;
+        padding: 2rem 0;
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        border-radius: 0;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.12);
+    }
+
+
+    .nav__menu.show-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        gap: 1.4rem;
+    }
+}
+
+/* -------------------- DESKTOP ALWAYS (>948px) -------------------- */
+@media (min-width: 949px) {
+    .nav__menu {
+        display: flex !important;
+    }
+
+    .nav__toggle {
+        display: none !important;
+    }
+}
+
+
+@media (max-width: 948px) {
+
+    /* Force navbar row layout */
+    .nav {
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100%;
+        padding: 0 .8rem;
+    }
+
+    .nav__data {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Logo stays left */
+    .nav__logo {
+        flex-shrink: 0;
+    }
+
+    .nav__logo img {
+        width: 120px;
+    }
+
+    /* Hamburger stays right */
+    .nav__toggle {
+        display: block !important;
+        margin-left: auto !important;
+        cursor: pointer;
+    }
+
+    .nav__toggle {
+        margin-right: 1rem !important;
+        /* adjust value */
+    }
+
+    /* Hide menu until clicked */
+    .nav__menu {
+        display: none;
+        position: absolute;
+        top: 7rem;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 1rem 0;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav__menu.show-menu {
+        display: flex;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+}
+
+
+/* -------------------- DESKTOP (≥949px) -------------------- */
+@media (min-width: 949px) {
+    .nav__menu {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav__toggle {
+        display: none !important;
+    }
+}
+
+/* -------------------- MOBILE (≤948px) -------------------- */
+@media (max-width: 430px) {
+    .nav__menu {
+        display: none;
+        position: fixed !important;
+        top: 4rem;
+        /* below navbar */
+        left: 0;
+        width: 100%;
+        height: auto;
+        background: white;
+        padding: 1rem 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        z-index: 999999 !important;
+    }
+
+    /* Show when clicked */
+    .nav__menu.show-menu {
+        display: flex !important;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        gap: 0.3rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav__link {
+        width: 100%;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: black !important;
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
+        padding: 0.1rem 0 !important;
+    }
+
+    /* Hamburger button visible */
+    .nav__toggle {
+        color: #000 !important;
+        display: block !important;
+        margin-left: auto;
+        font-size: 2rem;
+        z-index: 1000000;
+    }
+
+    .active-link {
+        color: #d4a017 !important;
+        border-bottom: 2px solid #d4a017 !important;
+        padding-bottom: 0.4rem !important;
+    }
+}
+
+.nav__menu {
+    z-index: 99999 !important;
+}
+
+/* FORCE SHOW HAMBURGER ON MOBILE */
+@media (max-width: 600px) {
+    .nav__toggle {
+        display: block !important;
+        z-index: 2000;
+    }
+}
+
+
+
+/* ----------- FINAL FIX FOR PRODUCT PAGE SCROLL ISSUE ----------- */
+
+/* FINAL CLEAN PRODUCT IMAGE STYLE */
+
+
+/* Smooth hover effect */
+.product-grid img:hover {
+    transform: scale(1.01);
+    border-color: #b8890b;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* PACKING GRID MATCH STYLE */
+.packinggrid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #d4a017;
+    transition: .25s ease;
+}
+
+.packinggrid img:hover {
+    transform: scale(1.06);
+    border-color: #b8890b;
+}
+
+
+/* Fix large documentation/packing background blowing width */
+.docbg {
+    width: 100% !important;
+    max-width: 100% !important;
+    background-size: contain !important;
+    overflow-x: hidden !important;
+}
+
+/* Global rule to kill ANY unexpected overflow */
+html,
+body {
+    overflow-x: hidden !important;
+}
+
+.product-grid img:hover {
+    transform: scale(1.01);
+}
+
+
+.product-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #d4a017;
+    transition: .25s ease;
+}
+
+/* Prevent children from breaking layout */
+
+
+
+
+/* ================= DOCUMENTATION FINAL CLEAN CSS ================= */
+
+#documentation-section {
+    width: 100vw;
+    text-align: center;
+    padding: 4rem 1rem;
+    background-color: #fffff5;
+    ;
+}
+
+.doc-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-top: 2rem;
+}
+
+.doc-title .blue {
+    background: linear-gradient(to right, cyan, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.doc-desc {
+    max-width: 800px;
+    margin: 1rem auto;
+    font-style: italic;
+    color: #444;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.doc-divider {
+    width: 260px;
+    margin: 1.5rem auto 2rem;
+}
+
+/* GRID — DESKTOP 2x2 */
+#doc-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* CARD */
+.doc-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 1rem;
+    border-radius: 14px;
+    gap: .6rem;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+    transition: .3s;
+}
+
+.doc-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGE */
+.doc-image {
+    width: 100%;
+    aspect-ratio: 1 / 1.41;
+    /* real document ratio */
+    border: 2px solid #d4a017;
+    border-radius: 12px;
+    object-fit: contain;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* DOWNLOAD BUTTON */
+.doc-download {
+    background: linear-gradient(135deg, #d4a017, #f7d87c, #b8890b);
+    padding: .6rem 1.2rem;
+    border-radius: 15px;
+    font-weight: 700;
+    transition: .3s;
+    color: black;
+}
+
+.doc-download:hover {
+    transform: scale(1.05);
+}
+
+/* EXPORT DOCUMENTS */
+.export-title {
+    margin-top: 3rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.export-sub {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+/* GRID: desktop 4 columns */
+#export-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.export-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+    transition: .3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.export-box:hover {
+    transform: translateY(-4px);
+}
+
+.export-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: .7rem;
+}
+
+.ddoc-title {
+    margin-top: 3rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+    #doc-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    #export-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .doc-title {
+        font-size: 1.9rem;
+        color: black;
+    }
+
+    .doc-box {
+        color: black;
+    }
+
+    .docname {
+        font-size: 150%;
+        font-weight: bolder;
+    }
+
+    .doc-image {
+        width: 100%;
+        aspect-ratio: 1 / 1.41;
+        /* real document ratio */
+        border: 2px solid #d4a017;
+        border-radius: 12px;
+        object-fit: contain;
+    }
+
+    .export-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.2rem !important;
+        color: black;
+    }
+
+    .export-title {
+        color: black;
+        font-size: 130%;
+
+
+    }
+
+    .ddoc-title {
+        font-size: 130%;
+        color: black;
+        margin-bottom: 2rem;
+    }
+
+    .docdes {
+        font-size: 1rem;
+        margin-top: -0.7rem;
+    }
+}
+
+/* ----------------------------- marketplace ------------------------------- */
+
+.marketplace-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.marketplace-section h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: black;
+    text-align: center;
+    margin: 0 auto 2rem auto;
+    /* centers & adds spacing below */
+    width: 100%;
+    margin-top: 3rem;
+}
+
+/* CARD */
+.marketplace-card {
+    width: 100%;
+    height: 260px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    transition: transform .3s ease;
+    border: 1px solid rgb(230, 230, 6);
+
+}
+
+.marketplace-card:hover {
+    transform: scale(1.05);
+}
+
+/* IMAGE ALWAYS SAME SIZE */
+.marketplace-card img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+}
+
+/* TEXT */
+.marketplace-card p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.3;
+    width: 100%;
+}
+
+/* RESPONSIVE - TABLET */
+@media (max-width: 900px) {
+    .marketplace-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* RESPONSIVE - MOBILE */
+@media (max-width: 480px) {
+    .marketplace-card {
+        height: 200px;
+    }
+
+    .marketplace-card img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .marketplace-card p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Fix hamburger menu when phone is rotated (landscape view) */
+@media screen and (max-height: 450px) and (max-width: 950px) {
+
+    .nav__menu {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto !important;
+        max-height: 70vh;
+        overflow-y: auto;
+        padding: 1rem 0;
+        margin-top:-3rem;
+        background: white;
+    }
+
+    .nav__list {
+        width: 100%;
+        text-align: center;
+        gap: 0.4rem;
+    }
+
+    .nav__link {
+        font-size: 1rem;
+        padding: 0.5rem 0;
+        width: 100%;
+    }
+
+    .nav__toggle {
+        font-size: 2.5rem;
+        color:black;
+    }
+    .founder-img{
+        width:14rem;
+        height:15rem;
+    }
+    .doc-title,.ddoc-title,.docdes,.docname,.export-title{
+        color:black;
+    }
+}
