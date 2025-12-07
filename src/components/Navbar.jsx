@@ -59,7 +59,7 @@ export default function Navbar() {
 
             <li>
               <NavLink 
-                to="/about-us"
+                to="/About-us"
                 className={({ isActive }) => isActive ? "nav__link active-link" : "nav__link"}
                 onClick={closeMenu}
               >
@@ -69,7 +69,7 @@ export default function Navbar() {
 
             <li>
               <NavLink 
-                to="/products"
+                to="/Products"
                 className={({ isActive }) => isActive ? "nav__link active-link" : "nav__link"}
                 onClick={closeMenu}
               >
@@ -79,7 +79,7 @@ export default function Navbar() {
 
             <li>
               <NavLink 
-                to="/documentation"
+                to="/Documentation"
                 className={({ isActive }) => isActive ? "nav__link active-link" : "nav__link"}
                 onClick={closeMenu}
               >
@@ -89,7 +89,7 @@ export default function Navbar() {
 
             <li>
               <NavLink 
-                to="/contact"
+                to="/Contact"
                 className={({ isActive }) => isActive ? "nav__link active-link" : "nav__link"}
                 onClick={closeMenu}
               >

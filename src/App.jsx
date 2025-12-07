@@ -11,16 +11,16 @@ import Documentation from "./pages/Documentation";
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/SK-GLOBAL-EXIM/">
       <Navbar />
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/about-us" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/documentation" element={<Documentation />} />
-        <Route path="/products" element={<Products />} />
+        <Route path="/Products" element={<Products />} />
+        <Route path="/About-us" element={<About />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/Documentation" element={<Documentation />} />
+        <Route path="/Products" element={<Products />} />
       </Routes>
 
       <Footer />
