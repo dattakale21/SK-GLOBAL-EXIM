@@ -124,7 +124,7 @@ export default function About() {
           <div className="founder-card">
             <img src={founder4} className="founder-img" />
             <h4 className="founder-name">Aniket Kale</h4>
-            <p className="founder-role">Assistant Production Manage</p>
+            <p className="founder-role">Assistant Production Manager</p>
             <p className="founder-desc italic">
               Aniket Kale supports the production team by coordinating material
               handling, processing operations, batch segregation, and final
