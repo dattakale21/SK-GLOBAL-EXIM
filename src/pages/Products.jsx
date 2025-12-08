@@ -82,7 +82,7 @@ function ProductGrid({ title, items }) {
   return (
     <div className="mb-20">
       {/* LINE */}
-       <hr className="w-[90%] max-w-[900px] mx-auto border-0 h-[1px] bg-gradient-to-r from-cyan-500 to-black rounded-full" />
+      <hr className="w-[90%] max-w-[900px] mx-auto border-0 h-[1px] bg-gradient-to-r from-cyan-500 to-black rounded-full" />
 
       {/* TITLE */}
       <h2 className="text-2xl font-bold mb-6 text-center prot producttitle">
