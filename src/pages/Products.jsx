@@ -42,7 +42,7 @@ function toArray(obj) {
 
 export default function Products() {
   return (
-    <div className="w-full bg-[#f8f4ed] px-6 py-10 product-section">
+    <div className="w-full  px-6 py-10 product-section">
       {/* TOP SECTION */}
       <div className="text-center mb-14">
         <h1 className="protitle producttitle text-3xl md:text-4xl font-serif font-extrabold tracking-wide">
@@ -82,7 +82,7 @@ function ProductGrid({ title, items }) {
   return (
     <div className="mb-20">
       {/* LINE */}
-      <div className="h-[2px] w-[900px] mx-auto my-8 bg-gradient-to-r from-cyan-500 to-black rounded-full pp"></div>
+       <hr className="w-[90%] max-w-[900px] mx-auto border-0 h-[1px] bg-gradient-to-r from-cyan-500 to-black rounded-full" />
 
       {/* TITLE */}
       <h2 className="text-2xl font-bold mb-6 text-center prot producttitle">

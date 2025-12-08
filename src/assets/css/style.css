@@ -3282,77 +3282,42 @@ body {
     border-color: #b8890b;
 }
 
+/* ============================= */
+/* ✅ FINAL MOBILE FIX FOR HERO  */
+/* ============================= */
+
 /* =============================== */
-/* 📱 MOBILE FIXES                */
+/* 🚀 FINAL FIX: MOBILE IMAGE ALIGNMENT */
 /* =============================== */
 
 @media (max-width: 768px) {
 
-    .bg-hero-image {
-        flex-direction: column;
-        text-align: center;
-    }
+  /* Fix container */
+  .img-box {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 
-    .img-box img {
-        max-width: 300px;
-    }
+  /* Fix image */
+  .img-box img {
+    width: 100% !important;
+    max-width: 300px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    display: block !important;
+    object-fit: contain !important;
+  }
 
-    .product-grid {
-        grid-template-columns: 1fr !important;
-        width: 95%;
-        margin: auto;
-    }
-
-    .packinggrid {
-        grid-template-columns: 1fr !important;
-    }
-
-    .product-grid img,
-    .packinggrid img {
-        height: 100% !important;
-    }
+  /* Remove any old unwanted transforms */
+  .img-box img {
+    transform: none !important;
+  }
 }
+
 
 /* =============================== */
 /* 🛠 LIGHTBOX THUMBNAIL FIX      */
-.yarl__slide img {
-  width: 100vw !important;
-  height: 100vh !important;
-  object-fit: contain !important;
-}
-
-.yarl__thumbnails,
-.yarl__carousel {
-  display: none !important;
-}
-
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.4rem;
-    width: 90%;
-    margin: auto;
-}
-
-.product-grid img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-@media (max-width: 900px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-    .product-grid img {
-        height: 320px;
-    }
-}
