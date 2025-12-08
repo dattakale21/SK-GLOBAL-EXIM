@@ -49,7 +49,7 @@ export default function Products() {
           Products & <span className="text-cyan-500 pack">&nbsp;Packing</span>
         </h1>
 
-        {/* <img src={dashLine} className="decor-line mx-auto my-5 productline" /> */}
+        <img src={dashLine} className="decor-line mx-auto my-5 productline" />
 
         <h2 className="text-3xl md:text-4xl font-extrabold mt-4 text-gray-800 tracking-tight">
           Our Product Range
@@ -82,7 +82,7 @@ function ProductGrid({ title, items }) {
   return (
     <div className="mb-20">
       {/* LINE */}
-      <div className="h-[2px] w-full mx-auto my-8 bg-gradient-to-r from-cyan-500 to-black rounded-full pp"></div>
+      <div className="h-[2px] w-[900px] mx-auto my-8 bg-gradient-to-r from-cyan-500 to-black rounded-full pp"></div>
 
       {/* TITLE */}
       <h2 className="text-2xl font-bold mb-6 text-center prot producttitle">
