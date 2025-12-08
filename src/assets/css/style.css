@@ -3194,3 +3194,7 @@ body {
 .contact-sectioni {
     background-color: #fffff5;
 } */
+
+* {
+  outline: 2px solid red !important;
+}
