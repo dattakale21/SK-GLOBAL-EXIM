@@ -1,0 +1,22 @@
+{
+  "name": "SK GLOBAL EXIM",
+  "short_name": "SK EXIM",
+  "description": "Premium exporter of dehydrated vegetable & herbal powders including Onion, Garlic, Ginger, Moringa, Curry Leaf.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#d4a017",
+  "icons": [
+    {
+      "src": "/tablogo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/tablogo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
