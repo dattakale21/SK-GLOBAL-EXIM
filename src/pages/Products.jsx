@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import dashLine from "../assets/images/dash_line.png";
 
-import alibaba from "../assets/images/alibaba.png";
+import global from "../assets/images/global.png";
 import indiamart from "../assets/images/indiamart.png";
 import exportersindia from "../assets/images/exports.png";
 import tradeindia from "../assets/images/trade.png";
@@ -96,7 +96,7 @@ function ProductGrid({ title, items }) {
             key={i}
             src={src}
             alt={title}
-            className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+            className="rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer proimage"
             onClick={() => {
               setIndex(i);
               setOpen(true);
@@ -190,17 +190,17 @@ function MarketplaceSection() {
 
       <div className="marketplace-grid">
         <a
-          href="https://www.alibaba.com"
+          href="https://www.globalsources.com/sk-global/showroom_6002100377345.htm"
           target="_blank"
           rel="noopener noreferrer"
           className="marketplace-card"
         >
-          <img src={alibaba} alt="Alibaba" />
-          <p>Visit Our Alibaba Store</p>
+          <img src={global} alt="Global Sources" />
+          <p>Visit Our Global Sources Store</p>
         </a>
 
         <a
-          href="https://www.indiamart.com"
+          href="https://www.indiamart.com/company/256147027/"
           target="_blank"
           rel="noopener noreferrer"
           className="marketplace-card"

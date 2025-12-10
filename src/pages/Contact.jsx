@@ -36,7 +36,13 @@ export default function Contact() {
     const endpoint = "https://formspree.io/f/xeoylgyr";
     const body = new URLSearchParams();
 
-    for (const key in formData) body.append(key, formData[key]);
+    for (const key in formData) {
+      body.append(key, formData[key]);
+    }
+
+    // ALSO send user's email as _replyto
+    body.append("email", formData.Email); // required by Formspree
+    body.append("_replyto", formData.Email); // fallback for autoresponse
 
     try {
       const res = await fetch(endpoint, {
@@ -154,13 +160,16 @@ export default function Contact() {
             />
             <input
               type="email"
-              name="Email"
+              name="email"
               placeholder="Email Address"
               required
               className="input-field"
               value={formData.Email}
-              onChange={handleChange}
+              onChange={(e) =>
+                setFormData({ ...formData, Email: e.target.value })
+              }
             />
+
             <input
               type="tel"
               name="Mobile number"
@@ -189,6 +198,21 @@ export default function Contact() {
             required
             className="input-field message"
           ></textarea>
+
+          {/* autoreply */}
+          <input
+            type="hidden"
+            name="_subject"
+            value="Thank you for contacting SK GLOBAL EXIM!"
+          />
+
+          <input
+            type="hidden"
+            name="_autoresponse"
+            value="Thank you for contacting SK GLOBAL EXIM.\n\nWe have received your enquiry and our team will respond within 24 hours. For urgent assistance, feel free to WhatsApp or call us anytime on +91 8767062808 / +91 7385191953.\n\nBest regards,\n\nSK GLOBAL EXIM\nExport Division\nContact: +91 8767062808 / +91 7385191953\nEmail: kaledatta2008@gmail.com"
+          />
+
+          <input type="hidden" name="_captcha" value="false" />
 
           <button type="submit" className="submit-btn">
             {submitting ? "Sending..." : "Send Message"}

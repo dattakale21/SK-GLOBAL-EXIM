@@ -2454,7 +2454,7 @@ footer,
 
     .welcome-para {
         width: 100%;
-        margin-left: -0.7rem;
+        /* margin-left: -0.7rem; */
     }
 
     .hero-inner {
@@ -2502,6 +2502,7 @@ footer,
         justify-content: center;
         align-items: center;
         font-weight: 900;
+               
 
     }
 
@@ -2509,8 +2510,9 @@ footer,
         width: 100%;
         text-align: center;
         font-size: 100%;
-        margin-left: 0.4rem;
+        /* margin-left: 0.4rem; */
         font-weight: 900;
+        border: 1px solid rgb(240, 154, 40); 
     }
 
     .btn-download i {
@@ -3197,19 +3199,44 @@ body {
     .export-title {
         color: black;
     }
+    
+    .bg-hero-image {
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  .welcome-para {
+    order: 1 !important;
+    width: 100% !important;
+  }
+
+  .img-box {
+    order: 2 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .img-box img {
+    max-width: 320px !important;
+    height: auto !important;
+    margin-top: 1rem !important;
+  }
 }
 
 
-html,
+/* html,
 body {
     width: 100%;
     overflow-x: hidden !important;
     max-width: 100vw !important;
-}
+} */
 
-* {
+/* * {
     max-width: 100vw;
-}
+} */
 
 .yarl__container {
     background: #000 !important;
@@ -3267,7 +3294,7 @@ body {
 /* =============================== */
 
 .product-grid img,
-.packinggrid img {
+.packinggrid img ,.proimage{
     width: 100%;
     max-width: 100%;
     height: auto;

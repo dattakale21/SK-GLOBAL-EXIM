@@ -186,6 +186,7 @@ export default function About() {
           <div className="connect-box">
             <p className="connect-label">Phone</p>
             <p className="connect-info">+91 8767062808</p>
+            <p className="connect-info">+91 7385191953</p>
           </div>
         </div>
       </div>

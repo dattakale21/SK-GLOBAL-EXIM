@@ -7,11 +7,13 @@ import Products from "./pages/Products";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Documentation from "./pages/Documentation";
+import ScrollToTop from "./ScrollToTop";   // ✅ ADD THIS IMPORT
 
 
 export default function App() {
   return (
     <Router basename="/SK-GLOBAL-EXIM/">
+       <ScrollToTop />
       <Navbar />
 
       <Routes>
