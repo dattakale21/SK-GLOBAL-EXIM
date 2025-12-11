@@ -25,7 +25,7 @@ export default function Footer() {
         </a>
 
         <a
-          href="https://instagram.com/skglobalexim"
+          href="https://www.instagram.com/skglobal_exim/?igsh=MXkyZTdoZ2NmZXVwcw%3D%3D#"
           target="_blank"
           rel="noopener noreferrer"
           className="social-icon instagram"

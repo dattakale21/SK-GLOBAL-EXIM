@@ -42,7 +42,7 @@ export default function Contact() {
 
     // ALSO send user's email as _replyto
     body.append("email", formData.Email); // required by Formspree
-    body.append("_replyto", formData.Email); // fallback for autoresponse
+  
 
     try {
       const res = await fetch(endpoint, {
