@@ -13,8 +13,12 @@ import c5 from "../assets/images/contactimages/5.png";
 import c6 from "../assets/images/contactimages/6.png";
 import c7 from "../assets/images/contactimages/7.png";
 import c8 from "../assets/images/contactimages/8.png";
+import img2 from "../assets/images/img2.png";
+
 
 export default function Contact() {
+  const [selectedImage, setSelectedImage] = useState(null);
+
   const [formData, setFormData] = useState({
     Name: "",
     Email: "",
@@ -42,7 +46,6 @@ export default function Contact() {
 
     // ALSO send user's email as _replyto
     body.append("email", formData.Email); // required by Formspree
-  
 
     try {
       const res = await fetch(endpoint, {
@@ -126,13 +129,15 @@ export default function Contact() {
           </p>
         </div>
 
+ <div className="img4-wrapper">
+  <img src={img2} className="img2" />
+</div>
         {/* NAME BLOCK */}
         <div className="flex flex-col items-center my-16">
           <img src={dashLine} className="mx-auto w-[80%] max-w-[29rem] mb-8" />
 
           <p className="lead text-xl font-serif font-bold text-gray-900 haha">
-            Led by Shivanand, Supported by Datta, Powered by Parmeshwar & Aniket
-            Kale
+            Driven by strong leadership and a skilled production-focused team.
           </p>
           <p className="text-gray-500 font-sans italic mt-1">
             Together Building SK GLOBAL EXIM
@@ -220,16 +225,36 @@ export default function Contact() {
         </form>
 
         {/* GALLERY */}
+        {/* GALLERY */}
         <div className="mt-16 text-center">
           <img src={lineImg} className="mx-auto mb-8 w-[80%] max-w-[29rem]" />
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-9 max-w-5xl mx-auto">
             {[c1, c2, c3, c4, c5, c6, c7, c8].map((img, i) => (
-              <img key={i} src={img} className="rounded-lg shadow-md" />
+              <div
+                key={i}
+                className="cursor-pointer"
+                onClick={() => setSelectedImage(img)}
+              >
+                <img src={img} className="rounded-lg shadow-md" />
+              </div>
             ))}
           </div>
         </div>
       </div>
+      {selectedImage && (
+        <div className="image-modal" onClick={() => setSelectedImage(null)}>
+          <span className="close-btn" onClick={() => setSelectedImage(null)}>
+            &times;
+          </span>
+
+          <img
+            src={selectedImage}
+            alt="Preview"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </section>
   );
 }

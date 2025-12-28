@@ -1,65 +1,125 @@
+import React, { useState } from "react";
 import groupImage from "../assets/images/groupimage.png";
-import companyPDF from "../assets/images/company.pdf";
-import productPDF from "../assets/images/products.pdf";
+
+// Company profile PDFs
+import grainsProfilePDF from "../assets/images/grains-profile.pdf";
+import dehydratedProfilePDF from "../assets/images/dehydrated-profile.pdf";
+
+// Product catalogue PDFs
+import grainsCataloguePDF from "../assets/images/grains-catalogue.pdf";
+import dehydratedCataloguePDF from "../assets/images/dehydrated-catalogue.pdf";
 
 export default function Home() {
+  const [openDropdown, setOpenDropdown] = useState(null);
+
   return (
     <>
       <section className="hero-section">
-        {/* FLEX CONTAINER */}
         <div className="bg-hero-image hero-inner">
-          {/* LEFT: CONTENT */}
+          {/* LEFT CONTENT */}
           <div className="welcome-para">
             <div className="bg-map">
               <h1>
                 Bringing India&rsquo;s Premium <br />
-                Dehydrated Powders To Your Doorstep.
+                Dehydrated Ingredients & Agro Commodities to Global Markets.
               </h1>
             </div>
 
             <p id="about-para" className="about-text">
-              
               <span className="company-name tt">
-                {" "}
-               Welcome to SK GLOBAL EXIM <br></br>
+                Welcome to SK GLOBAL EXIM <br />
               </span>
               a trusted Indian exporter specializing in{" "}
               <span className="bold-text">
-                premium dehydrated vegetable and herbal powders.
-              </span>{" "}With a strong focus on
+                premium dehydrated vegetable and herbal products, along with
+                selected grains, pulses, and agro commodities
+              </span>{" "}
+              With a strong focus on{" "}
               <span className="bold-text">
-                {" "}
                 quality, reliability, and global standards,
-              </span> we supply high-grade Onion Powder, Garlic Powder, Ginger
-              Powder, Moringa Powder, and Curry Leaf Powder to industries
-              worldwide. At
-              <span className="company-name"> SK GLOBAL EXIM</span>, our mission
-              is to deliver consistent quality and long-term value to our global
-              partners.
+              </span>{" "}
+              we supply high-grade Dehydrated Vegetables & Fruits Powders, as
+              well as carefully sourced Grains, Pulses & Feed Products, to
+              industries worldwide.
             </p>
 
-            <div className="download-buttons">
-              <a
-                href={companyPDF}
-                download="SK_GLOBAL_EXIM_Company_Profile.pdf"
-                className="btn btn-download"
-              >
-                <i className="ri-download-line"></i>
-                Company Profile
-              </a>
+            {/* DOWNLOAD BUTTONS ROW */}
+            <div className="download-buttons-row">
+              {/* COMPANY PROFILE */}
+              <div className="dropdown">
+                <button
+                  className="btn btn-download"
+                  onClick={() =>
+                    setOpenDropdown(
+                      openDropdown === "company" ? null : "company"
+                    )
+                  }
+                >
+                  <i className="ri-download-line"></i>
+                  Company Profile
+                </button>
 
-              <a
-                href={productPDF}
-                download="SK_GLOBAL_EXIM_Products_Catalogue.pdf"
-                className="btn btn-download outline"
-              >
-                <i className="ri-download-line"></i>
-                Products Catalogue
-              </a>
+                {openDropdown === "company" && (
+                  <div className="dropdown-menu">
+                    <a
+                      href={grainsProfilePDF}
+                      download
+                      className="dropdown-item"
+                      onClick={() => setOpenDropdown(null)}
+                    >
+                      Grains Profile
+                    </a>
+                    <a
+                      href={dehydratedProfilePDF}
+                      download
+                      className="dropdown-item"
+                      onClick={() => setOpenDropdown(null)}
+                    >
+                      Dehydrated Vegetables Profile
+                    </a>
+                  </div>
+                )}
+              </div>
+
+              {/* PRODUCT CATALOGUE */}
+              <div className="dropdown">
+                <button
+                  className="btn btn-download outline"
+                  onClick={() =>
+                    setOpenDropdown(
+                      openDropdown === "catalogue" ? null : "catalogue"
+                    )
+                  }
+                >
+                  <i className="ri-download-line"></i>
+                  Products Catalogue
+                </button>
+
+                {openDropdown === "catalogue" && (
+                  <div className="dropdown-menu">
+                    <a
+                      href={grainsCataloguePDF}
+                      download
+                      className="dropdown-item"
+                      onClick={() => setOpenDropdown(null)}
+                    >
+                      Grains Catalogue
+                    </a>
+                    <a
+                      href={dehydratedCataloguePDF}
+                      download
+                      className="dropdown-item"
+                      onClick={() => setOpenDropdown(null)}
+                    >
+                      Dehydrated Vegetables Catalogue
+                    </a>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 
-          {/* RIGHT: IMAGE */}
+          {/* RIGHT IMAGE */}
           <div className="img-box">
             <img src={groupImage} alt="SK GLOBAL EXIM products" />
           </div>

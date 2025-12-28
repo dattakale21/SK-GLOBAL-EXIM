@@ -1,22 +1,33 @@
 import React from "react";
 
 import dashLine from "../assets/images/dash_line.png";
+import heroImg from "../assets/images/aboutimage.png";
+
 import founder1 from "../assets/images/founder1.png";
 import founder2 from "../assets/images/founder2.png";
 import founder3 from "../assets/images/founder3.png";
 import founder4 from "../assets/images/founder4.png";
 import lineImg from "../assets/images/line.png";
+import img1 from "../assets/images/img1.png";
+import img4 from "../assets/images/img4.png";
 
 export default function About() {
   return (
     <section id="about" className="about-section about-page">
+      <div className="about-top-image">
+        <img src={heroImg} alt="About Banner" />
+        <div className="about-overlay"></div>
+
+        <div className="about-top-text">
+          <h1>ABOUT <span className="blue">US</span></h1>
+          <p>
+            Premium quality agricultural and food products designed for global
+            markets with trust, purity, and consistency.
+          </p>
+        </div>
+      </div>
+
       <div className="about-container">
-        <h1 className="about-title">
-          ABOUT <span className="title-highlight">US</span>
-        </h1>
-
-        <img src={dashLine} className="dash-line" />
-
         <div className="intro-text">
           <h2 className="intro-heading text-black text-4xl font-bold mb-6 mt-30">
             SK Global Exim
@@ -29,11 +40,9 @@ export default function About() {
           </p>
 
           <p className="para fpara1">
-            Founded by{" "}
-            <span className="black-bold">Shivanand Venkatesh Kale</span> and
-            strengthened by a dedicated core team, we bring the richness of
-            India’s natural ingredients to the world. From humble farms to
-            global markets, our purpose is simple:
+            Built on a strong foundation and driven by a committed team, we
+            bring the richness of India’s natural ingredients to the world. From
+            humble farms to global markets, our purpose is simple:
             <span className="black-bold">
               {" "}
               deliver purity with consistency, and quality with integrity.
@@ -41,12 +50,21 @@ export default function About() {
           </p>
 
           <p className="italic-para">
-            Whether it’s Onion Powder, Garlic Powder, Ginger, Moringa, or Curry
-            Leaf Powder — we ensure every batch reflects our commitment to
-            excellence. We don’t just supply dehydrated powders —{" "}
+            Whether it’s Onion Powder, Garlic Powder, Ginger, Moringa, Curry
+            Leaf Powder, Chilli Powder, or Dried Onion Flakes, we ensure every
+            batch reflects our commitment to excellence. Our offerings are
+            structured across two core product categories: Dehydrated Vegetable
+            & Herbal Powders, including onion, garlic, ginger, moringa, curry
+            leaf, chilli, and dried onion flakes—processed to retain natural
+            aroma, color, and flavor. Grains, Pulses & Feed Products, including
+            Toor Dal, Chana Dal, Roasted Futana, Futana Dal (Roasted Gram Dal),
+            High-Protein Chuni Cattle Feed (Toor & Chana), Chana, Moong Dal,
+            Cotton Seed Oil Cake, Green Vatana, and White Udid Dal—sourced and
+            supplied to meet consistent quality and bulk requirements. We don’t
+            just supply products —
             <span className="black-bold">
-              we deliver ingredients that shape cuisines, enhance flavors, and
-              power food creations across the globe.
+              we deliver ingredients that shape cuisines, support industries,
+              and power food and feed supply chains across the globe.
             </span>
           </p>
 
@@ -65,76 +83,9 @@ export default function About() {
             </span>
           </p>
         </div>
+        <img src={lineImg} className="decor-line" />
 
-        <img src={dashLine} className="dash-line mt-large" />
-
-        <h3 className="team-title">MEET THE TEAM</h3>
-
-        <div className="founders-grid">
-          <div className="founder-card">
-            <img src={founder1} className="founder-img" />
-            <h4 className="founder-name">Shivanand Kale</h4>
-            <p className="founder-role">Founder</p>
-            <p className="founder-desc italic">
-              Shivanand Kale is the visionary Founder of SK GLOBAL EXIM,
-              responsible for establishing the company’s strategic direction and
-              ensuring operational excellence across sourcing, production, and
-              trade processes. With a deep understanding of the agricultural and
-              dehydrated foods sector, he oversees supplier relationships,
-              quality validation, and end-to-end production supervision. His
-              leadership ensures that every shipment reflects the company’s
-              commitment to quality, consistency, and reliability.
-            </p>
-          </div>
-
-          <div className="founder-card">
-            <img src={founder2} className="founder-img" />
-            <h4 className="founder-name">Datta Kale</h4>
-            <p className="founder-role">
-              Export Manager & Head of Digital Operations
-            </p>
-            <p className="founder-desc italic">
-              Datta Kale leads the export operations and global client
-              communication at SK GLOBAL EXIM. He oversees documentation, buyer
-              handling, quotations, platform listings, and all technical +
-              digital functions of the business. Datta ensures seamless
-              coordination between production, logistics, and international
-              buyers, enabling smooth and timely shipments. He also manages the
-              brand’s digital presence, marketing assets, and technology
-              workflows.
-            </p>
-          </div>
-
-          <div className="founder-card">
-            <img src={founder3} className="founder-img" />
-            <h4 className="founder-name">Parmeshwar Kale</h4>
-            <p className="founder-role">
-              Production Manager & Manufacturing Lead
-            </p>
-            <p className="founder-desc italic">
-              Parmeshwar Kale oversees the entire production cycle — from raw
-              material procurement to dehydration, milling, and packaging. With
-              strong operational skills and knowledge of processing standards,
-              he ensures that each batch meets moisture, aroma, mesh, and purity
-              specifications. His hands-on approach guarantees consistent
-              quality and timely manufacturing for export orders.
-            </p>
-          </div>
-
-          <div className="founder-card">
-            <img src={founder4} className="founder-img" />
-            <h4 className="founder-name">Aniket Kale</h4>
-            <p className="founder-role">Assistant Production Manager</p>
-            <p className="founder-desc italic">
-              Aniket Kale supports the production team by coordinating material
-              handling, processing operations, batch segregation, and final
-              packing activities. He plays a crucial role in maintaining
-              workflow efficiency and ensuring proper documentation of batch
-              processes. His dedication contributes to timely and smooth
-              production cycles.
-            </p>
-          </div>
-        </div>
+        <img src={img1} className="img1" />
 
         <img src={dashLine} className="aboutdash dash-line mt-large" />
 
@@ -148,15 +99,15 @@ export default function About() {
             We grew up sharing more than just a family name — we shared the same
             vision:{" "}
             <span className="black-bold">
-              to bring India’s finest dehydrated powders to the world with
-              honesty, care, and consistency.
+              to bring India’s finest dehydrated powders & Grains, Pulses & Feed
+              Products to the world with honesty, care, and consistency.
             </span>
           </p>
 
           <p className="story-italic">
             Our work is rooted in dedication. From sourcing fresh raw materials
-            to watching each batch transform into premium export-grade powder,
-            we feel the same pride every single time.
+            to watching each batch transform into premium export-grade Powder
+            and Grains, we feel the same pride every single time.
           </p>
 
           <p className="story-para">
@@ -180,14 +131,16 @@ export default function About() {
 
           <div className="connect-box">
             <p className="connect-label">Email</p>
-            <p className="connect-info">kaledatta2008@gmail.com</p>
+            <p className="connect-info">skglobalexim96@gmail.com</p>
           </div>
 
           <div className="connect-box">
             <p className="connect-label">Phone</p>
-            <p className="connect-info">+91 8767062808</p>
-            <p className="connect-info">+91 7385191953</p>
+            <p className="connect-info">+91 8591948621</p>
           </div>
+        </div>
+        <div className="img4-wrapper">
+          <img src={img4} className="img4" />
         </div>
       </div>
     </section>

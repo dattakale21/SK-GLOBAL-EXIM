@@ -8,7 +8,10 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Documentation from "./pages/Documentation";
 import ScrollToTop from "./ScrollToTop";   // ✅ ADD THIS IMPORT
-
+// Product Pages
+import Grains from "./pages/grains";
+import Powder from "./pages/powder";
+import Packaging from "./pages/packing";
 
 export default function App() {
   return (
@@ -19,6 +22,10 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Products" element={<Products />} />
+          {/* Product Pages */}
+        <Route path="/grains" element={<Grains />} />
+        <Route path="/powder" element={<Powder />} />
+        <Route path="/packaging" element={<Packaging />} />
         <Route path="/About-us" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Documentation" element={<Documentation />} />

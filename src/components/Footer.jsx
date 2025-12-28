@@ -8,7 +8,7 @@ export default function Footer() {
 
       <div className="footer-social">
         <a
-          href="https://wa.me/918767062808"
+          href="https://wa.me/918591948621"
           target="_blank"
           rel="noopener noreferrer"
           className="social-icon whatsapp"
@@ -16,7 +16,7 @@ export default function Footer() {
           <i className="ri-whatsapp-fill"></i>
         </a>
         <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=kaledatta2008@gmail.com&su=Enquiry%20from%20website&body=Hello%20SK%20GLOBAL%20EXIM"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=skglobalexim96@gmail.com&su=Enquiry%20from%20website&body=Hello%20SK%20GLOBAL%20EXIM"
           target="_blank"
           rel="noopener noreferrer"
           className="social-icon email"
@@ -33,7 +33,7 @@ export default function Footer() {
           <i className="ri-instagram-fill"></i>
         </a>
         <a
-          href="tel:+918767062808"
+          href="tel:+91/918591948621"
           target="_blank"
           rel="noopener noreferrer"
           className="social-icon tel"
