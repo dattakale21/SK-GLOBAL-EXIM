@@ -1,8 +1,4 @@
-
 import React, { useState } from "react";
-
-
-
 
 import coaIcon from "../assets/images/coa.png";
 import phytoIcon from "../assets/images/phyto.png";
@@ -38,24 +34,23 @@ export default function Documentation() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const wehave = [
-  {
-    title: "GST Registration Certificate",
-    icon: gstIcon,
-  },
-  {
-    title: "APEDA Registration Certificate",
-    icon: apedaIcon,
-  },
-  {
-    title: "IEC – Import Export Code Certificate",
-    icon: iecIcon,
-  },
-  {
-    title: "Business Registration Certificate (Shop Act / Ghumasta)",
-    icon: shopActIcon,
-  },
-];
-  
+    {
+      title: "GST Registration Certificate",
+      icon: gstIcon,
+    },
+    {
+      title: "APEDA Registration Certificate",
+      icon: apedaIcon,
+    },
+    {
+      title: "IEC – Import Export Code Certificate",
+      icon: iecIcon,
+    },
+    {
+      title: "Business Registration Certificate (Shop Act / Ghumasta)",
+      icon: shopActIcon,
+    },
+  ];
 
   const exportDocs = [
     { title: "COA (Certificate of Analysis)", icon: coaIcon },
@@ -93,15 +88,13 @@ export default function Documentation() {
         for international trade.
       </p>
 
-     
       <div id="doc-wrapper">
-      {wehave.map((d, i) => (
-  <div key={i} className="export-box">
-    <img src={d.icon} alt={d.title} className="export-icon" />
-    <p>{d.title}</p>
-  </div>
-))}
-
+        {wehave.map((d, i) => (
+          <div key={i} className="export-box">
+            <img src={d.icon} alt={d.title} className="export-icon" />
+            <p>{d.title}</p>
+          </div>
+        ))}
       </div>
 
       <img src={dashLine} className="doc-divider" alt="divider" />
@@ -122,31 +115,31 @@ export default function Documentation() {
       </div>
 
       {/* IMAGE GALLERY */}
-{/* IMAGE GALLERY */}
-<div className="doc-gallery-section">
-  <img src={dashLine} className="doc-divider" alt="divider" />
+      {/* IMAGE GALLERY */}
+      <div className="doc-gallery-section">
+        <img src={dashLine} className="doc-divider" alt="divider" />
 
-  <div className="doc-gallery-grid">
-    {[d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12].map((img, index) => (
-      <div
-        key={index}
-        className="doc-gallery-item"
-        onClick={() => setSelectedImage(img)}
-      >
-        <img src={img} alt={`Gallery ${index + 1}`} />
+        <div className="doc-gallery-grid">
+          {[d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12].map(
+            (img, index) => (
+              <div
+                key={index}
+                className="doc-gallery-item"
+                onClick={() => setSelectedImage(img)}
+              >
+                <img src={img} alt={`Gallery ${index + 1}`} />
+              </div>
+            )
+          )}
+        </div>
       </div>
-    ))}
-  </div>
-</div>
 
-
-{selectedImage && (
-  <div className="image-modal" onClick={() => setSelectedImage(null)}>
-    <span className="close-btn">&times;</span>
-    <img src={selectedImage} alt="Full View" />
-  </div>
-)}
-     
+      {selectedImage && (
+        <div className="image-modal" onClick={() => setSelectedImage(null)}>
+          <span className="close-btn">&times;</span>
+          <img src={selectedImage} alt="Full View" />
+        </div>
+      )}
     </section>
   );
 }

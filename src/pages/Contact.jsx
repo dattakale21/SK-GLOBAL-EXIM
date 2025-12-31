@@ -84,20 +84,19 @@ export default function Contact() {
   }
 
   return (
-    <section className="contact-section  py-16 text-black">
+   <section id="documentation-section">
+  <div className="page-center">
+
       <div className="max-w-6xl mx-auto px-4">
         {/* Heading */}
         <h1 className="text-3xl md:text-4xl font-serif font-extrabold text-center tracking-tight contacttitle">
           CONTACT{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 blue">
             US
           </span>
         </h1>
 
-        <img
-          src={dashLine}
-          className="mx-auto mt-10 mb-6 w-[80%] max-w-[29rem]"
-        />
+       <img src={dashLine} className="doc-divider" alt="divider" />
 
         {/* INTRO TEXT */}
         <div className="max-w-3xl mx-auto text-center space-y-8 leading-relaxed text-gray-800 contactintro ">
@@ -133,7 +132,7 @@ export default function Contact() {
         </div>
         {/* NAME BLOCK */}
         <div className="flex flex-col items-center my-16">
-          <img src={dashLine} className="mx-auto w-[80%] max-w-[29rem] mb-8" />
+         <img src={dashLine} className="doc-divider" alt="divider" />
 
           <p className="lead text-xl font-serif font-bold text-gray-900 haha">
             Driven by strong leadership and a skilled production-focused team.
@@ -142,7 +141,7 @@ export default function Contact() {
             Together Building SK GLOBAL EXIM
           </p>
 
-          <img src={dashLine} className="mx-auto w-[80%] max-w-[29rem] mt-8" />
+          <img src={dashLine} className="doc-divider" alt="divider" />
         </div>
         <p className="text-sm mandit text-black font-semibold mt-4">
           Mandatory Details
@@ -226,7 +225,7 @@ export default function Contact() {
         {/* GALLERY */}
         {/* GALLERY */}
         <div className="mt-16 text-center">
-          <img src={lineImg} className="mx-auto mb-8 w-[80%] max-w-[29rem]" />
+         <img src={lineImg} className="doc-divider" alt="divider" />
 
           <div className="contact-gallery">
             {[c1, c2, c3, c4, c5, c6, c7, c8].map((img, i) => (
@@ -254,6 +253,7 @@ export default function Contact() {
           />
         </div>
       )}
+      </div>
     </section>
   );
 }

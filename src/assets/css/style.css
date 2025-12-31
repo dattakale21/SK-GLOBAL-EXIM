@@ -1712,7 +1712,7 @@ footer,
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     width: 100%;
-    margin-left: -0.9rem;
+    /* margin-left: -0.9rem; */
 }
 
 .message {
@@ -2326,7 +2326,7 @@ footer,
     .form-two-row {
         margin: auto auto;
         width: 102%;
-        margin-left: -0.8rem;
+        /* margin-left: -0.8rem; */
     }
 
     .contact-form {
@@ -4232,8 +4232,9 @@ body {
     }
 
     .hero-section {
-        margin-bottom: 90px;
+        margin-bottom: 170px;
     }
+    
 }
 
 @media screen and (orientation: landscape) and (max-height: 500px) {
@@ -4803,182 +4804,190 @@ textarea.input-field {
   }
 }
 
-/* ===============================
-   CONTACT GALLERY - FINAL FIX
-=============================== */
-
-.contact-gallery {
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  max-width: 1100px;
-  margin: 3rem auto;
-  padding: 0 1rem;
-  justify-items: center;
-}
-
-/* Image styling */
-.contact-gallery img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 14px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
-}
-
-.contact-gallery img:hover {
-  transform: scale(1.05);
-}
-
-/* ===== TABLET ===== */
-@media (max-width: 1024px) {
-  .contact-gallery {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
-  .contact-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* ===== SMALL MOBILE ===== */
-@media (max-width: 480px) {
-  .contact-gallery {
-    grid-template-columns: 1fr;
-  }
-}
 
 .intro-text{
     color:black;
 }
 
+.page-center{
+    margin-top:3rem;
+}
 
+.contacttitle{
+font-size:50px;
+}
 
-/* ================================
-   CONTACT PAGE – HARD CENTER FIX
+/* ===============================
+   MOBILE RESPONSIVE FIX
+   (keeps form layout same)
 ================================ */
 
-/* Prevent horizontal overflow */
-html, body {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden !important;
-}
-
-/* MAIN CONTACT SECTION */
-.contact-section {
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 3rem 1rem;
-  display: flex;
-  justify-content: center;
-}
-
-/* INNER WRAPPER */
-.contact-section > div {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* CENTER TEXT BLOCKS */
-.contact-title,
-.contact-intro,
-.mandit,
-.img4-wrapper {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* IMAGE CENTER FIX */
-.img4-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.img4 {
-  max-width: 600px;
-  width: 100%;
-  height: auto;
-}
-
-/* FORM CENTER FIX */
-.contact-form {
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-}
-
-/* FORM GRID */
-.form-two-row {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  width: 100%;
-}
-
-/* INPUTS */
-.input-field {
-  width: 100%;
-}
-
-/* TEXTAREA */
-textarea.input-field {
-  width: 100%;
-  min-height: 160px;
-}
-
-/* BUTTON CENTER */
-.submit-btn {
-  margin: 1.5rem auto 0 auto;
-  display: block;
-}
-
-/* GALLERY CENTER */
-.contact-gallery {
-  max-width: 1000px;
-  margin: 3rem auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-}
-
-/* RESPONSIVE */
 @media (max-width: 768px) {
 
-  .contact-section {
-    padding: 2rem 1rem;
+  /* PAGE CENTER FIX */
+  .page-center {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    color:black;
+  }
+
+  /* HEADINGS */
+  .contacttitle {
+    font-size: 2.3rem;
+    text-align: center;
+    margin-bottom:0.4rem;
+  }
+
+  /* INTRO TEXT */
+  .contactintro {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  /* IMAGE SECTION */
+  .img4-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+
+  .img2 {
+    width: 90%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  /* =========================
+     FORM — KEEP 2 COLUMN
+  ========================== */
+
+  .contact-form {
+    width: 100%;
+    color:black;
   }
 
   .form-two-row {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 👈 stays 2 column */
+    gap: 12px;
   }
 
+  .input-field {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .message {
+    grid-column: span 2; /* full width */
+    min-height: 130px;
+  }
+
+  .submit-btn {
+    width: 60%;
+    margin-top: 1rem;
+  }
+
+  /* =========================
+     GALLERY — SINGLE COLUMN
+  ========================== */
+
+  .contact-gallery {
+    display: grid;
+    grid-template-columns: 1fr; /* one image per row */
+    gap: 16px;
+  }
+
+  .contact-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    
+  }
+
+  /* POPUP IMAGE */
+  .image-modal img {
+    max-width: 90%;
+    max-height: 80vh;
+  }
+
+  /* PREVENT SIDE SCROLL */
+  body {
+    overflow-x: hidden;
+  }
+}
+
+
+/* ===============================
+   CONTACT GALLERY GRID
+================================ */
+
+.contact-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Image styling */
+.contact-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- TABLET ---------- */
+@media (max-width: 1024px) {
   .contact-gallery {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .img4 {
-    max-width: 90%;
-  }
 }
 
-@media (max-width: 480px) {
+/* ---------- MOBILE ---------- */
+@media (max-width: 600px) {
   .contact-gallery {
     grid-template-columns: 1fr;
   }
-
-  .contact-title {
-    font-size: 1.8rem;
-  }
 }
 
+/* ===============================
+   MOBILE FULL-WIDTH GALLERY FIX
+================================ */
+@media (max-width: 600px) {
+
+  /* Remove outer constraints */
+  .contact-gallery {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 22px !important;
+    margin: 0 !important;
+  }
+
+  /* Each image wrapper full width */
+  .contact-gallery > div {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* Image fills full width */
+  .contact-gallery img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    border-radius: 12px;
+    display: block;
+  }
+
+  /* Remove parent side padding */
+  .max-w-6xl,
+  .page-center,
+  .contact-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
