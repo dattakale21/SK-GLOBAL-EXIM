@@ -146,21 +146,19 @@ export default function Packing() {
   return (
     <div className="packing-page">
       {/* HERO */}
-      <section className="grains-hero-video packingvideo">
+      <section className="grains-hero-video1">
         <video
-          className="hero-video"
+          className="hero1-video"
           src={packingvideo}
           autoPlay
           muted
           loop
           playsInline
-        ></video>
-        <div className="hero-overlay">
+        />
+        <div className="hero-overlay pack1">
           <h1>Packing Solutions</h1>
           <p>
-            High-quality export packaging designed for safety, hygiene, and
-            durability, available in 100g, 25kg, 40kg, 50kg, and customized pack
-            sizes as per customer requirements.
+            High-quality export packaging designed for safety and durability.
           </p>
         </div>
       </section>
@@ -382,18 +380,17 @@ export default function Packing() {
         </div>
       </section>
       {selectedImage && (
-  <div className="image-modal" onClick={() => setSelectedImage(null)}>
-    <span className="close-btn" onClick={() => setSelectedImage(null)}>
-      &times;
-    </span>
-    <img
-      src={selectedImage}
-      alt="Preview"
-      onClick={(e) => e.stopPropagation()}
-    />
-  </div>
-)}
-
+        <div className="image-modal" onClick={() => setSelectedImage(null)}>
+          <span className="close-btn" onClick={() => setSelectedImage(null)}>
+            &times;
+          </span>
+          <img
+            src={selectedImage}
+            alt="Preview"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 }

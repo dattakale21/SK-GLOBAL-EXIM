@@ -112,7 +112,7 @@ export default function About() {
             </span>
           </p>
 
-          <p className="story-italic">
+          <p className="story-italic italic-strong">
             Our work is rooted in dedication. From sourcing fresh raw materials
             to watching each batch transform into premium export-grade Powder
             and Grains, we feel the same pride every single time.
@@ -126,7 +126,7 @@ export default function About() {
 
           <p className="story-para">
             We don’t simply export products —{" "}
-            <span className="black-bold">
+            <span className=" italic black-bold italic-strong">
               we export trust, flavor, and value to global markets.{" "}
             </span>
           </p>

@@ -84,175 +84,179 @@ export default function Contact() {
   }
 
   return (
-   <section id="documentation-section">
-  <div className="page-center">
-
-      <div className="max-w-6xl mx-auto px-4">
-        {/* Heading */}
-        <h1 className="text-3xl md:text-4xl font-serif font-extrabold text-center tracking-tight contacttitle">
-          CONTACT{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 blue">
-            US
-          </span>
-        </h1>
-
-       <img src={dashLine} className="doc-divider" alt="divider" />
-
-        {/* INTRO TEXT */}
-        <div className="max-w-3xl mx-auto text-center space-y-8 leading-relaxed text-gray-800 contactintro ">
-          <p className="font-sans text-lg md:text-xl">
-            <span className="italic">We love delivering quality,</span>and we’re
-            honored to be considered as your trusted export partner.
-          </p>
-          <p>
-            This website reflects our work — every product, every batch, and
-            every process represents who we are.
-          </p>
-
-          <p className="font-serif text-lg italic">
-            If you wish to source from us, share every detail you need —{" "}
-            <span className="font-semibold">
-              specifications, quantities, packaging, and expectations.
-            </span>{" "}
-          </p>
-
-          <p className="font-sans text-lg md:text-xl">
-            When your products reach shelves, kitchens, industries, and
-            consumers across the world, these choices become the foundation of
-            your brand’s success.
-          </p>
-
-          <p className="font-serif italic text-lg">
-            We would be proud to supply the ingredients that help you create it.
-          </p>
-        </div>
-
-        <div className="img4-wrapper">
-          <img src={img2} className="img2" />
-        </div>
-        {/* NAME BLOCK */}
-        <div className="flex flex-col items-center my-16">
-         <img src={dashLine} className="doc-divider" alt="divider" />
-
-          <p className="lead text-xl font-serif font-bold text-gray-900 haha">
-            Driven by strong leadership and a skilled production-focused team.
-          </p>
-          <p className="text-gray-500 font-sans italic mt-1">
-            Together Building SK GLOBAL EXIM
-          </p>
+    <section id="documentation-section">
+      <div className="page-center">
+        <div className="max-w-6xl mx-auto px-4">
+          {/* Heading */}
+          <h1 className="text-3xl md:text-4xl font-serif font-extrabold text-center tracking-tight contacttitle">
+            CONTACT{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 blue">
+              US
+            </span>
+          </h1>
 
           <img src={dashLine} className="doc-divider" alt="divider" />
-        </div>
-        <p className="text-sm mandit text-black font-semibold mt-4">
-          Mandatory Details
-        </p>
 
-        {/* FORM */}
-        {/* FORM */}
-        <form onSubmit={handleSubmit} className="contact-form">
-          {/* 2×2 rows */}
-          <div className="form-two-row">
-            <input
-              type="text"
-              name="Name"
-              placeholder="Full Name"
-              required
-              className="input-field"
-              value={formData.Name}
-              onChange={handleChange}
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              required
-              className="input-field"
-              value={formData.Email}
-              onChange={(e) =>
-                setFormData({ ...formData, Email: e.target.value })
-              }
-            />
+          {/* INTRO TEXT */}
+          <div className="max-w-3xl mx-auto text-center space-y-8 leading-relaxed text-gray-800 contactintro ">
+            <p className="font-sans text-lg md:text-xl">
+              <span className="italic">We love delivering quality,</span>and
+              we’re honored to be considered as your trusted export partner.
+            </p>
+            <p>
+              This website reflects our work — every product, every batch, and
+              every process represents who we are.
+            </p>
 
-            <input
-              type="tel"
-              name="Mobile number"
-              placeholder="Mobile Number"
-              required
-              className="input-field"
-              value={formData["Mobile number"]}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              name="Email subject"
-              placeholder="Email Subject"
-              required
-              className="input-field"
-              value={formData["Email subject"]}
-              onChange={handleChange}
-            />
+            <p className="font-serif text-lg italic">
+              If you wish to source from us, share every detail you need —{" "}
+              <span className="font-semibold">
+                specifications, quantities, packaging, and expectations.
+              </span>{" "}
+            </p>
+
+            <p className="font-sans text-lg md:text-xl">
+              When your products reach shelves, kitchens, industries, and
+              consumers across the world, these choices become the foundation of
+              your brand’s success.
+            </p>
+
+            <p className="font-serif italic text-lg">
+              We would be proud to supply the ingredients that help you create
+              it.
+            </p>
           </div>
 
-          {/* 1 wide row */}
-          <textarea
-            name="Message"
-            placeholder="Your Message"
-            rows="9"
-            required
-            className="input-field message"
-          ></textarea>
+          <div className="img4-wrapper">
+            <img
+              src={img2}
+              className="img2 cursor-pointer"
+              onClick={() => setSelectedImage(img2)}
+            />
+          </div>
+          {/* NAME BLOCK */}
+          <div className="flex flex-col items-center my-16">
+            <img src={dashLine} className="doc-divider" alt="divider" />
 
-          {/* autoreply */}
-          <input
-            type="hidden"
-            name="_subject"
-            value="Thank you for contacting SK GLOBAL EXIM!"
-          />
+            <p className="lead text-xl font-serif font-bold text-gray-900 haha">
+              Driven by strong leadership and a skilled production-focused team.
+            </p>
+            <p className="text-gray-500 font-sans italic mt-1 lead1">
+              Together Building SK GLOBAL EXIM
+            </p>
 
-          <input
-            type="hidden"
-            name="_autoresponse"
-            value="Thank you for contacting SK GLOBAL EXIM.\n\nWe have received your enquiry and our team will respond within 24 hours. For urgent assistance, feel free to WhatsApp or call us anytime on +91 8767062808 / +91 7385191953.\n\nBest regards,\n\nSK GLOBAL EXIM\nExport Division\nContact: +91 8767062808 / +91 7385191953\nEmail: kaledatta2008@gmail.com"
-          />
+            <img src={dashLine} className="doc-divider" alt="divider" />
+          </div>
+          <p className="text-sm mandit text-black font-semibold mt-4">
+            Mandatory Details
+          </p>
 
-          <input type="hidden" name="_captcha" value="false" />
+          {/* FORM */}
+          {/* FORM */}
+          <form onSubmit={handleSubmit} className="contact-form">
+            {/* 2×2 rows */}
+            <div className="form-two-row">
+              <input
+                type="text"
+                name="Name"
+                placeholder="Full Name"
+                required
+                className="input-field"
+                value={formData.Name}
+                onChange={handleChange}
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required
+                className="input-field"
+                value={formData.Email}
+                onChange={(e) =>
+                  setFormData({ ...formData, Email: e.target.value })
+                }
+              />
 
-          <button type="submit" className="submit-btn">
-            {submitting ? "Sending..." : "Send Message"}
-          </button>
-        </form>
+              <input
+                type="tel"
+                name="Mobile number"
+                placeholder="Mobile Number"
+                required
+                className="input-field"
+                value={formData["Mobile number"]}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                name="Email subject"
+                placeholder="Email Subject"
+                required
+                className="input-field"
+                value={formData["Email subject"]}
+                onChange={handleChange}
+              />
+            </div>
 
-        {/* GALLERY */}
-        {/* GALLERY */}
-        <div className="mt-16 text-center">
-         <img src={lineImg} className="doc-divider" alt="divider" />
+            {/* 1 wide row */}
+            <textarea
+              name="Message"
+              placeholder="Your Message"
+              rows="9"
+              required
+              className="input-field message"
+            ></textarea>
 
-          <div className="contact-gallery">
-            {[c1, c2, c3, c4, c5, c6, c7, c8].map((img, i) => (
-              <div
-                key={i}
-                className="cursor-pointer"
-                onClick={() => setSelectedImage(img)}
-              >
-                <img src={img} className="rounded-lg shadow-md" />
-              </div>
-            ))}
+            {/* autoreply */}
+            <input
+              type="hidden"
+              name="_subject"
+              value="Thank you for contacting SK GLOBAL EXIM!"
+            />
+
+            <input
+              type="hidden"
+              name="_autoresponse"
+              value="Thank you for contacting SK GLOBAL EXIM.\n\nWe have received your enquiry and our team will respond within 24 hours. For urgent assistance, feel free to WhatsApp or call us anytime on +91 8767062808 / +91 7385191953.\n\nBest regards,\n\nSK GLOBAL EXIM\nExport Division\nContact: +91 8767062808 / +91 7385191953\nEmail: kaledatta2008@gmail.com"
+            />
+
+            <input type="hidden" name="_captcha" value="false" />
+
+            <button type="submit" className="submit-btn">
+              {submitting ? "Sending..." : "Send Message"}
+            </button>
+          </form>
+
+          {/* GALLERY */}
+          {/* GALLERY */}
+          <div className="mt-16 text-center">
+            <img src={lineImg} className="doc-divider" alt="divider" />
+
+            <div className="contact-gallery">
+              {[c1, c2, c3, c4, c5, c6, c7, c8].map((img, i) => (
+                <div
+                  key={i}
+                  className="cursor-pointer"
+                  onClick={() => setSelectedImage(img)}
+                >
+                  <img src={img} className="rounded-lg shadow-md" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      {selectedImage && (
-        <div className="image-modal" onClick={() => setSelectedImage(null)}>
-          <span className="close-btn" onClick={() => setSelectedImage(null)}>
-            &times;
-          </span>
+        {selectedImage && (
+          <div className="image-modal" onClick={() => setSelectedImage(null)}>
+            <span className="close-btn" onClick={() => setSelectedImage(null)}>
+              &times;
+            </span>
 
-          <img
-            src={selectedImage}
-            alt="Preview"
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
+            <img
+              src={selectedImage}
+              alt="Preview"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        )}
       </div>
     </section>
   );

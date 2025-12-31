@@ -11,7 +11,7 @@ import packagingImg from "../assets/images/packing-bg.png";
 export default function Products() {
   const navigate = useNavigate();
   return (
-    <div className="products-page">
+    <div className="products-page"  >
       {/* HERO SECTION */}
       <section
         className="hero-section"
