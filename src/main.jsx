@@ -1,8 +1,8 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-import "./assets/css/style.css";a
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import App from './App.jsx';
+import "./assets/css/style.css";
 import "remixicon/fonts/remixicon.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
