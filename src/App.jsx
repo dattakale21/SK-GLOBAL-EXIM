@@ -15,7 +15,7 @@ import Packaging from "./pages/packing";
 
 export default function App() {
   return (
-    <Router basename="/SK-GLOBAL-EXIM/">
+    <Router >
        <ScrollToTop />
       <Navbar />
 
@@ -29,7 +29,7 @@ export default function App() {
         <Route path="/About-us" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Documentation" element={<Documentation />} />
-        <Route path="/Products" element={<Products />} />
+        
       </Routes>
 
       <Footer />
