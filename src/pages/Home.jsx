@@ -84,7 +84,7 @@ export default function Home() {
               {/* PRODUCT CATALOGUE */}
               <div className="dropdown">
                 <button
-                  className="btn btn-download outline"
+                  className="btn btn-download "
                   onClick={() =>
                     setOpenDropdown(
                       openDropdown === "catalogue" ? null : "catalogue"

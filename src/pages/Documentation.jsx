@@ -2,15 +2,7 @@
 import React, { useState } from "react";
 
 
-import iecPDF from "../assets/images/iec.pdf";
-import gstPDF from "../assets/images/registration.pdf";
-import shopPDF from "../assets/images/gh.pdf";
-import companyPDF from "../assets/images/registration.pdf";
 
-import bg1 from "../assets/images/bg1.png";
-import bg2 from "../assets/images/bg2.png";
-import bg3 from "../assets/images/bg3.png";
-import bg4 from "../assets/images/bg4.png";
 
 import coaIcon from "../assets/images/coa.png";
 import phytoIcon from "../assets/images/phyto.png";
@@ -21,6 +13,11 @@ import packingIcon from "../assets/images/packing.png";
 import blIcon from "../assets/images/bl.png";
 import photo from "../assets/images/photo.png";
 import heroImg from "../assets/images/documentimage.png";
+
+import gstIcon from "../assets/images/gst.png";
+import apedaIcon from "../assets/images/apeda.png";
+import iecIcon from "../assets/images/iec.png";
+import shopActIcon from "../assets/images/gum.png";
 
 import d1 from "../assets/images/d1.png";
 import d2 from "../assets/images/d2.png";
@@ -40,32 +37,25 @@ import dashLine from "../assets/images/dash_line.png";
 export default function Documentation() {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const docs = [
-    {
-      title: "IEC Certificate",
-      desc: "Import–Export Code issued by DGFT",
-      pdf: iecPDF,
-      bg: bg1,
-    },
-    {
-      title: "GST Registration Certificate",
-      desc: "Registered under GST Act",
-      pdf: gstPDF,
-      bg: bg2,
-    },
-    {
-      title: "Shop & Establishment License",
-      desc: "Registered Business Location",
-      pdf: shopPDF,
-      bg: bg3,
-    },
-    {
-      title: "Company Registration",
-      desc: "Legal Entity Proof",
-      pdf: companyPDF,
-      bg: bg4,
-    },
-  ];
+  const wehave = [
+  {
+    title: "GST Registration Certificate",
+    icon: gstIcon,
+  },
+  {
+    title: "APEDA Registration Certificate",
+    icon: apedaIcon,
+  },
+  {
+    title: "IEC – Import Export Code Certificate",
+    icon: iecIcon,
+  },
+  {
+    title: "Business Registration Certificate (Shop Act / Ghumasta)",
+    icon: shopActIcon,
+  },
+];
+  
 
   const exportDocs = [
     { title: "COA (Certificate of Analysis)", icon: coaIcon },
@@ -97,7 +87,7 @@ export default function Documentation() {
         </div>
       </div>
 
-      {/* <h2 className="ddoc-title">VERIFIED BUSINESS REGISTRATION</h2>
+      <h2 className="ddoc-title">VERIFIED BUSINESS REGISTRATION</h2>
       <p className="export-sub">
         Legally verified documents demonstrating our credibility and compliance
         for international trade.
@@ -105,24 +95,16 @@ export default function Documentation() {
 
      
       <div id="doc-wrapper">
-        {docs.map((d, i) => (
-          <div key={i} className="doc-box">
-            <div
-              className="doc-image"
-              style={{ backgroundImage: `url(${d.bg})` }}
-            ></div>
+      {wehave.map((d, i) => (
+  <div key={i} className="export-box">
+    <img src={d.icon} alt={d.title} className="export-icon" />
+    <p>{d.title}</p>
+  </div>
+))}
 
-            <h3 className="docname">{d.title}</h3>
-            <p className="docdes">{d.desc}</p>
+      </div>
 
-            <a href={d.pdf} download className="doc-download">
-              Download PDF
-            </a>
-          </div>
-        ))}
-      </div> */}
-
-      {/* <img src={dashLine} className="doc-divider" alt="divider" /> */}
+      <img src={dashLine} className="doc-divider" alt="divider" />
 
       {/* EXPORT DOCUMENT LIST */}
       <h2 className="export-title">Export Documents Provided</h2>

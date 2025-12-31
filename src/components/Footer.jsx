@@ -16,7 +16,7 @@ export default function Footer() {
           <i className="ri-whatsapp-fill"></i>
         </a>
         <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=skglobalexim96@gmail.com&su=Enquiry%20from%20website&body=Hello%20SK%20GLOBAL%20EXIM"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@skglobalexim.com&su=Enquiry%20from%20website&body=Hello%20SK%20GLOBAL%20EXIM"
           target="_blank"
           rel="noopener noreferrer"
           className="social-icon email"
@@ -33,12 +33,31 @@ export default function Footer() {
           <i className="ri-instagram-fill"></i>
         </a>
         <a
+          href="https://www.linkedin.com/in/sk-global-exim-4b600135b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-icon linkedin"
+        >
+          <i className="ri-linkedin-fill"></i>
+        </a>
+
+        {/* Facebook */}
+        <a
+          href="https://www.facebook.com/share/1GYUVQua8R/?mibextid=wwXIfr"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-icon facebook"
+        >
+          <i className="ri-facebook-fill"></i>
+        </a>
+        <a
           href="tel:+91/918591948621"
           target="_blank"
           rel="noopener noreferrer"
           className="social-icon tel"
         >
-          <i class="fas fa-phone-alt"></i>
+        <i className="ri-phone-fill"></i>
+
         </a>
       </div>
 

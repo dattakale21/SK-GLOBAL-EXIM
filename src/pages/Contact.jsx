@@ -15,7 +15,6 @@ import c7 from "../assets/images/contactimages/7.png";
 import c8 from "../assets/images/contactimages/8.png";
 import img2 from "../assets/images/img2.png";
 
-
 export default function Contact() {
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -129,9 +128,9 @@ export default function Contact() {
           </p>
         </div>
 
- <div className="img4-wrapper">
-  <img src={img2} className="img2" />
-</div>
+        <div className="img4-wrapper">
+          <img src={img2} className="img2" />
+        </div>
         {/* NAME BLOCK */}
         <div className="flex flex-col items-center my-16">
           <img src={dashLine} className="mx-auto w-[80%] max-w-[29rem] mb-8" />
@@ -229,7 +228,7 @@ export default function Contact() {
         <div className="mt-16 text-center">
           <img src={lineImg} className="mx-auto mb-8 w-[80%] max-w-[29rem]" />
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-9 max-w-5xl mx-auto">
+          <div className="contact-gallery">
             {[c1, c2, c3, c4, c5, c6, c7, c8].map((img, i) => (
               <div
                 key={i}

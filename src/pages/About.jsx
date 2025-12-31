@@ -19,7 +19,9 @@ export default function About() {
         <div className="about-overlay"></div>
 
         <div className="about-top-text">
-          <h1>ABOUT <span className="blue">US</span></h1>
+          <h1>
+            ABOUT <span className="blue">US</span>
+          </h1>
           <p>
             Premium quality agricultural and food products designed for global
             markets with trust, purity, and consistency.
@@ -73,6 +75,12 @@ export default function About() {
             international-standard documentation, we transform agricultural
             products into export-ready ingredients trusted by food
             manufacturers, distributors, and brands worldwide.
+          </p>
+          <p className="para">
+            We work as a distributor and wholesaler, dealing in agricultural
+            products, food ingredients, grains, pulses, and dehydrated powders,
+            supplying quality products to buyers across India and global
+            markets.
           </p>
 
           <p className="para">
@@ -131,12 +139,16 @@ export default function About() {
 
           <div className="connect-box">
             <p className="connect-label">Email</p>
-            <p className="connect-info">skglobalexim96@gmail.com</p>
+            <a href="mailto:contact@skglobalexim.com" className="contact-link">
+              contact@skglobalexim.com
+            </a>
           </div>
 
           <div className="connect-box">
             <p className="connect-label">Phone</p>
-            <p className="connect-info">+91 8591948621</p>
+            <a href="tel:+918591948621" className="contact-link">
+              +91 85919 48621
+            </a>
           </div>
         </div>
         <div className="img4-wrapper">
