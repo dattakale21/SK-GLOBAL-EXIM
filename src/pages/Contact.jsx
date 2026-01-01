@@ -36,7 +36,7 @@ export default function Contact() {
     e.preventDefault();
     setSubmitting(true);
 
-    const endpoint = "https://formspree.io/f/xeoylgyr";
+    const endpoint = "https://formspree.io/f/mbdldokg";
     const body = new URLSearchParams();
 
     for (const key in formData) {
