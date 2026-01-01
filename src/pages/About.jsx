@@ -90,6 +90,15 @@ export default function About() {
               we connect markets, create value, and build lasting partnerships.
             </span>
           </p>
+
+          <p className="para">
+            We operate as a{" "}
+            <span className="black-bold">
+              wholesaler, local supplier, importer, and exporter
+            </span>
+            , serving domestic and international markets with consistency,
+            transparency, and a strong commitment to quality-driven trade.
+          </p>
         </div>
         <img src={lineImg} className="decor-line" />
 
@@ -146,7 +155,7 @@ export default function About() {
 
           <div className="connect-box">
             <p className="connect-label">Phone</p>
-            <a href="tel:+918591948621" className="contact-link">
+            <a href="tel:8591948621" className="contact-link">
               +91 85919 48621
             </a>
           </div>

@@ -27,8 +27,9 @@ export default function Home() {
 
             <p id="about-para" className="about-text">
               <span className="company-name tt">
-                Welcome to SK GLOBAL EXIM <br />
+                Welcome to SK GLOBAL EXIM
               </span>
+                <br/>
               a trusted Indian exporter specializing in{" "}
               <span className="bold-text">
                 premium dehydrated vegetable and herbal products, along with

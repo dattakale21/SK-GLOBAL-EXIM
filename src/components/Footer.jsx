@@ -51,7 +51,7 @@ export default function Footer() {
           <i className="ri-facebook-fill"></i>
         </a>
         <a
-          href="tel:+91/918591948621"
+          href="tel:+91/8591948621"
           target="_blank"
           rel="noopener noreferrer"
           className="social-icon tel"

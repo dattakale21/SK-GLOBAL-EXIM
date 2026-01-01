@@ -5590,3 +5590,66 @@ span.italic-strong {
     background: rgba(0, 0, 0, 0.4);
     z-index: 2;
 }
+
+.marketplace-section {
+    margin-top:-9rem;
+  padding: 4rem 1.5rem;
+  background: #fffff5;
+  text-align: center;
+}
+
+.marketplace-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.marketplace-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 14px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.marketplace-card:hover {
+  transform: translateY(-6px);
+}
+
+.marketplace-card img {
+  max-width: 140px;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .marketplace-grid {
+    grid-template-columns: 1fr; /* one below another */
+  }
+}
+
+
+.custom-line {
+  border: none;
+  height: 1.5px;
+  width: 70%;
+  margin: 60px auto;
+  background: linear-gradient(to right, transparent, #aaa, transparent);
+}
+
+
+.packaging-description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #374151;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.pack1 p{
+    font-size:1.1rem;
+  line-height: 1.6;
+
+}

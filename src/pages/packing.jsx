@@ -157,8 +157,15 @@ export default function Packing() {
         />
         <div className="hero-overlay pack1">
           <h1>Packing Solutions</h1>
-          <p>
-            High-quality export packaging designed for safety and durability.
+          <p className="para">
+            We ensure{" "}
+            
+              consistent quality and accurate quantity
+           
+            in every shipment, offering flexible packaging options in
+          1kg, 5kg, 25kg, 40kg, and 50kg
+            packs, customized to meet client requirements for domestic and
+            international export.
           </p>
         </div>
       </section>
